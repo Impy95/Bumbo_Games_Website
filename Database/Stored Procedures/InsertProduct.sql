@@ -1,4 +1,3 @@
-
 CREATE PROCEDURE insertProduct
 	(@Name VARCHAR(50), 
 	@Description VARCHAR(255),
@@ -9,8 +8,15 @@ CREATE PROCEDURE insertProduct
 	@Hidden BIT)
 AS
 BEGIN
-INSERT INTO [dbo].[Products]
-VALUES (@Name,
+INSERT INTO [dbo].[Products](
+Name,
+Description,
+UnitCost,
+DisplayCost,
+Image,
+Hidden)
+VALUES (
+@Name,
 @Description,
 @UnitCost,
 @DisplayCost,
