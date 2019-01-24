@@ -67,11 +67,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DisplayProductInformation.aspx" />
+    <Content Include="ManageCategories.aspx" />
     <Content Include="ManageProducts.aspx" />
     <Content Include="styles\styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisplayProductInformation.aspx.cs">
+      <DependentUpon>DisplayProductInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayProductInformation.aspx.designer.cs">
+      <DependentUpon>DisplayProductInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCategories.aspx.cs">
+      <DependentUpon>ManageCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCategories.aspx.designer.cs">
+      <DependentUpon>ManageCategories.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageProducts.aspx.cs">
       <DependentUpon>ManageProducts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

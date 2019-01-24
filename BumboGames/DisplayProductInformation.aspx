@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageProducts.aspx.cs" Inherits="BumboGames.ManageProducts" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DisplayProductInformation.aspx.cs" Inherits="BumboGames.DisplayProductInformation" %>
 
 <!DOCTYPE html>
 
@@ -86,22 +86,43 @@
                         <br />
                         Genre
                     </div>
-                    <div class="col-md-8">
-                        <h3 class="center">Games</h3>
-                        <asp:GridView ID="grvGamesEdit" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="5">
-                            <Columns>
+                    <!--
                                 <asp:ImageField>
                                 </asp:ImageField>
                                 <asp:BoundField HeaderText="Game Name" />
                                 <asp:BoundField HeaderText="Game Description" />
                                 <asp:BoundField HeaderText="Game Price" />
-                                <asp:CommandField ButtonType="Button" ShowEditButton="True" />
-                                <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />
+                                -->
+                    <div class="col-md-8">
+                        <h3 class="center">Games</h3>
+                        <asp:GridView ID="grvGames" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="5" OnDataBound="grvGames_DataBound" OnPageIndexChanged="grvGames_PageIndexChanged">
+                            <Columns>
+                                <asp:TemplateField HeaderText="Letter">
+                                    <ItemTemplate>
+                                        <%# Container.DataItem %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Letter" ItemStyle-Width="30%">
+                                    <ItemTemplate>
+                                        <%# Container.DataItem %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Letter" ItemStyle-Width="40%">
+                                    <ItemTemplate>
+                                        <%# Container.DataItem %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Letter" ItemStyle-Width="30%">
+                                    <ItemTemplate>
+                                        <%# Container.DataItem %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
                     </div>
                 </div>
             </div>
+            <br />
             <br />
             <div>
                 <div class="row">

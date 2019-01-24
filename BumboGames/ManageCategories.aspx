@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageProducts.aspx.cs" Inherits="BumboGames.ManageProducts" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageCategories.aspx.cs" Inherits="BumboGames.ManageCategories" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Manage Product Information</title>
+    <title>Manage Category Information</title>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
@@ -87,14 +87,11 @@
                         Genre
                     </div>
                     <div class="col-md-8">
-                        <h3 class="center">Games</h3>
-                        <asp:GridView ID="grvGamesEdit" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="5">
+                        <h3 class="center">Genres</h3>
+                        <asp:GridView ID="grvGenreEdit" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="5">
                             <Columns>
-                                <asp:ImageField>
-                                </asp:ImageField>
-                                <asp:BoundField HeaderText="Game Name" />
-                                <asp:BoundField HeaderText="Game Description" />
-                                <asp:BoundField HeaderText="Game Price" />
+                                <asp:BoundField HeaderText="Genre Name" />
+                                <asp:BoundField HeaderText="Game Information" />
                                 <asp:CommandField ButtonType="Button" ShowEditButton="True" />
                                 <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />
                             </Columns>

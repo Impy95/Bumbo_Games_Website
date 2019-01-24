@@ -10,7 +10,7 @@
 namespace BumboGames {
     
     
-    public partial class ManageProducts {
+    public partial class DisplayProductInformation {
         
         /// <summary>
         /// form1 control.
@@ -40,12 +40,12 @@ namespace BumboGames {
         protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
-        /// grvGamesEdit control.
+        /// grvGames control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvGamesEdit;
+        protected global::System.Web.UI.WebControls.GridView grvGames;
     }
 }
