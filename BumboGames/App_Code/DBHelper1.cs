@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 
 namespace BumboGames
 {
-    internal class DBHelper
+    public class DBHelper
     {
         public static string ConnectionString()
         {

@@ -86,39 +86,20 @@
                         <br />
                         Genre
                     </div>
-                    <!--
-                                <asp:ImageField>
-                                </asp:ImageField>
-                                <asp:BoundField HeaderText="Game Name" />
-                                <asp:BoundField HeaderText="Game Description" />
-                                <asp:BoundField HeaderText="Game Price" />
-                                -->
                     <div class="col-md-8">
                         <h3 class="center">Games</h3>
-                        <asp:GridView ID="grvGames" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="5" OnDataBound="grvGames_DataBound" OnPageIndexChanged="grvGames_PageIndexChanged" OnPageIndexChanging="grvGames_PageIndexChanging">
+                        <asp:GridView ID="grvGames" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnDataBound="grvGames_DataBound" OnPageIndexChanged="grvGames_PageIndexChanged" OnPageIndexChanging="grvGames_PageIndexChanging">
                             <Columns>
-                                <asp:TemplateField HeaderText="Letter">
-                                    <ItemTemplate>
-                                        <%# Container.DataItem %>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Letter" ItemStyle-Width="30%">
-                                    <ItemTemplate>
-                                        <%# Container.DataItem %>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Letter" ItemStyle-Width="40%">
-                                    <ItemTemplate>
-                                        <%# Container.DataItem %>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Letter" ItemStyle-Width="30%">
-                                    <ItemTemplate>
-                                        <%# Container.DataItem %>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
+                                <asp:BoundField HeaderText="Game Name" DataField="Name" />
+                                <asp:BoundField HeaderText="Game Description" DataField="Description" />
+                                <asp:BoundField HeaderText="Game Price" DataField="DisplayCost" />
                             </Columns>
                         </asp:GridView>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
                     </div>
                 </div>
             </div>
