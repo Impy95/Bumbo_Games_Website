@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateProducts.aspx.cs" Inherits="BumboGames.CreateProducts" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateCategories.aspx.cs" Inherits="BumboGames.CreateCategories" %>
 
 <!DOCTYPE html>
 
@@ -87,64 +87,45 @@
                         Genre
                     </div>
                     <div class="col-md-8">
-                        <h3 class="center">New Product</h3>
-                        <br />
+                        <h3 class="center">New Genre</h3>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <label>Game Name:</label>
+                                    <label>Genre Name:</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <asp:TextBox ID="txtGameName" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtGenreName" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="col-md-3">
-                                    <asp:RequiredFieldValidator ID="reqGameName"
+                                    <asp:RequiredFieldValidator ID="reqGenreName"
                                         runat="server"
-                                        ErrorMessage="Game name is required"
-                                        ControlToValidate="txtGameName"
+                                        ErrorMessage="Genre name is required"
+                                        ControlToValidate="txtGenreName"
                                         CssClass="cursor"
                                         ForeColor="Red"
-                                        ToolTip="Game name is required"
+                                        ToolTip="Genre name is required"
                                         ValidationGroup="Card1">*</asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <label>Game Description:</label>
+                                    <label>Genre Description:</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <asp:TextBox ID="txtGameDescription" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtGenreDesc" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="col-md-3">
-                                    <asp:RequiredFieldValidator ID="reqGameDesc"
+                                    <asp:RequiredFieldValidator ID="reqGenreDesc"
                                         runat="server"
-                                        ErrorMessage="Game description is required"
-                                        ControlToValidate="txtGameDescription"
+                                        ErrorMessage="Genre description is required"
+                                        ControlToValidate="txtGenreDesc"
                                         CssClass="cursor"
                                         ForeColor="Red"
-                                        ToolTip="Game Description is required"
+                                        ToolTip="Genre Description is required"
                                         ValidationGroup="Card1">*</asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-3">
-                                    <label>Game Price:</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <asp:TextBox ID="txtGamePrice" runat="server"></asp:TextBox>
-                                </div>
-                                <div class="col-md-3">
-                                    <asp:RequiredFieldValidator ID="reqGamePrice"
-                                        runat="server"
-                                        ErrorMessage="Game price is required"
-                                        ControlToValidate="txtGamePrice"
-                                        CssClass="cursor"
-                                        ForeColor="Red"
-                                        ToolTip="Game price is required"
-                                        ValidationGroup="Card1">*</asp:RequiredFieldValidator>
-                                </div>
-                            </div>
-                            <div class="row">      
                                 <div class="col-md-4">
                                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Card1" ForeColor="Red"/>
                                 </div>
@@ -194,3 +175,5 @@
     </form>
 </body>
 </html>
+
+

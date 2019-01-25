@@ -98,6 +98,15 @@
                         </asp:GridView>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <asp:LinkButton ID="lbtnCreateCategories"
+                            runat="server"
+                            CssClass="btn btn-dark" OnClick="lbtnCreateCategories_Click"
+                            >Create New Genre</asp:LinkButton>
+                    </div>
+                </div>
             </div>
             <br />
             <div>

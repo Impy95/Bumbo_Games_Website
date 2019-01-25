@@ -10,7 +10,7 @@
 namespace BumboGames {
     
     
-    public partial class CreateProducts {
+    public partial class CreateCategories {
         
         /// <summary>
         /// form1 control.
@@ -40,58 +40,40 @@ namespace BumboGames {
         protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
-        /// txtGameName control.
+        /// txtGenreName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGameName;
+        protected global::System.Web.UI.WebControls.TextBox txtGenreName;
         
         /// <summary>
-        /// reqGameName control.
+        /// reqGenreName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGameName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGenreName;
         
         /// <summary>
-        /// txtGameDescription control.
+        /// txtGenreDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGameDescription;
+        protected global::System.Web.UI.WebControls.TextBox txtGenreDesc;
         
         /// <summary>
-        /// reqGameDesc control.
+        /// reqGenreDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGameDesc;
-        
-        /// <summary>
-        /// txtGamePrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGamePrice;
-        
-        /// <summary>
-        /// reqGamePrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGamePrice;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGenreDesc;
         
         /// <summary>
         /// ValidationSummary1 control.
