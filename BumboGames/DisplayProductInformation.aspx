@@ -95,7 +95,7 @@
                                 -->
                     <div class="col-md-8">
                         <h3 class="center">Games</h3>
-                        <asp:GridView ID="grvGames" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="5" OnDataBound="grvGames_DataBound" OnPageIndexChanged="grvGames_PageIndexChanged">
+                        <asp:GridView ID="grvGames" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="5" OnDataBound="grvGames_DataBound" OnPageIndexChanged="grvGames_PageIndexChanged" OnPageIndexChanging="grvGames_PageIndexChanging">
                             <Columns>
                                 <asp:TemplateField HeaderText="Letter">
                                     <ItemTemplate>

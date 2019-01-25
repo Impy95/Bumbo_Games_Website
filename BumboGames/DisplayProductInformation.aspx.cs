@@ -11,7 +11,7 @@ namespace BumboGames
     {
         private void GetData()
         {
-            grvGames.DataSource = new string[] { "A", "B", "C", "D", "E", "F", "G" };
+            grvGames.DataSource = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P" };
             grvGames.DataBind();
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -46,6 +46,13 @@ namespace BumboGames
         protected void grvGames_PageIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        protected void grvGames_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GetData();
+            grvGames.PageIndex = e.NewPageIndex;
+            grvGames.DataBind();
         }
     }
 }

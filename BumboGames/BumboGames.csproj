@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CreateProducts.aspx" />
     <Content Include="DisplayProductInformation.aspx" />
     <Content Include="ManageCategories.aspx" />
     <Content Include="ManageProducts.aspx" />
@@ -74,6 +75,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateProducts.aspx.cs">
+      <DependentUpon>CreateProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateProducts.aspx.designer.cs">
+      <DependentUpon>CreateProducts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DisplayProductInformation.aspx.cs">
       <DependentUpon>DisplayProductInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

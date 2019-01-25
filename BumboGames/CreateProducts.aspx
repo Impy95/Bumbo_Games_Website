@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageProducts.aspx.cs" Inherits="BumboGames.ManageProducts" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateProducts.aspx.cs" Inherits="BumboGames.CreateProducts" %>
 
 <!DOCTYPE html>
 
@@ -87,27 +87,77 @@
                         Genre
                     </div>
                     <div class="col-md-8">
-                        <h3 class="center">Games</h3>
-                        <asp:GridView ID="grvGamesEdit" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="5">
-                            <Columns>
-                                <asp:ImageField>
-                                </asp:ImageField>
-                                <asp:BoundField HeaderText="Game Name" />
-                                <asp:BoundField HeaderText="Game Description" />
-                                <asp:BoundField HeaderText="Game Price" />
-                                <asp:CommandField ButtonType="Button" ShowEditButton="True" />
-                                <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />
-                            </Columns>
-                        </asp:GridView>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <asp:LinkButton ID="lbtnCreateProducts"
-                            runat="server"
-                            CssClass="btn btn-dark"
-                            OnClick="lbtnCreateProducts_Click">Create New Product</asp:LinkButton>
+                        <h3 class="center">New Product</h3>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Game Name:</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:TextBox ID="txtGameName" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:RequiredFieldValidator ID="reqGameName"
+                                        runat="server"
+                                        ErrorMessage="Game name is required"
+                                        ControlToValidate="txtGameName"
+                                        CssClass="cursor"
+                                        ForeColor="Red"
+                                        ToolTip="Game name is required"
+                                        ValidationGroup="Card1">*</asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Game Description:</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:TextBox ID="txtGameDescription" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:RequiredFieldValidator ID="reqGameDesc"
+                                        runat="server"
+                                        ErrorMessage="Game description is required"
+                                        ControlToValidate="txtGameDescription"
+                                        CssClass="cursor"
+                                        ForeColor="Red"
+                                        ToolTip="Game Description is required"
+                                        ValidationGroup="Card1">*</asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Game Price:</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:TextBox ID="txtGamePrice" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:RequiredFieldValidator ID="reqGamePrice"
+                                        runat="server"
+                                        ErrorMessage="Game price is required"
+                                        ControlToValidate="txtGamePrice"
+                                        CssClass="cursor"
+                                        ForeColor="Red"
+                                        ToolTip="Game price is required"
+                                        ValidationGroup="Card1">*</asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <asp:LinkButton ID="lbtnCreate"
+                                        runat="server"
+                                        CssClass="btn btn-dark"
+                                        ValidationGroup="Card1" OnClick="lbtnCreate_Click">Create</asp:LinkButton>
+                                </div>
+                                <div class="col-md-4">
+                                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Card1" ForeColor="Red"/>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:Label ID="lblCard1Summary" runat="server" Text=""></asp:Label>
+                                </div>
+                            </div>                   
+                        </div>
                     </div>
                 </div>
             </div>

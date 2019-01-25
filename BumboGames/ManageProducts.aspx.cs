@@ -13,5 +13,10 @@ namespace BumboGames
         {
 
         }
+
+        protected void lbtnCreateProducts_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateProducts.aspx");
+        }
     }
 }
