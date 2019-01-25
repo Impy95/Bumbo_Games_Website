@@ -1,8 +1,8 @@
 CREATE PROCEDURE insertProduct
 	(@Name VARCHAR(50), 
 	@Description VARCHAR(255),
-	@UnitCost MONEY,
-	@DisplayCost MONEY,
+	@UnitCost FLOAT,
+	@DisplayCost FLOAT,
 	@Image VARCHAR(255),
 	@CategoryID INT,
 	@Hidden BIT)
