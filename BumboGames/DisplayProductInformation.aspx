@@ -88,7 +88,8 @@
                     </div>
                     <div class="col-md-8">
                         <h3 class="center">Games</h3>
-                        <asp:GridView ID="grvGames" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnDataBound="grvGames_DataBound" OnPageIndexChanged="grvGames_PageIndexChanged" OnPageIndexChanging="grvGames_PageIndexChanging">
+                        <!--to add later AllowPaging="True"-->
+                        <asp:GridView ID="grvGames" runat="server" AutoGenerateColumns="False"  PageSize="5" OnDataBound="grvGames_DataBound" OnPageIndexChanged="grvGames_PageIndexChanged" OnPageIndexChanging="grvGames_PageIndexChanging">
                             <Columns>
                                 <asp:BoundField HeaderText="Game Name" DataField="Name" />
                                 <asp:BoundField HeaderText="Game Description" DataField="Description" />
