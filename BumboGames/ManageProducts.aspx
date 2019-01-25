@@ -88,13 +88,13 @@
                     </div>
                     <div class="col-md-8">
                         <h3 class="center">Games</h3>
-                        <asp:GridView ID="grvGamesEdit" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="5">
+                        <asp:GridView ID="grvGamesEdit" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="5">
                             <Columns>
                                 <asp:ImageField>
                                 </asp:ImageField>
-                                <asp:BoundField HeaderText="Game Name" />
-                                <asp:BoundField HeaderText="Game Description" />
-                                <asp:BoundField HeaderText="Game Price" />
+                                <asp:BoundField HeaderText="Game Name" DataField="name" />
+                                <asp:BoundField HeaderText="Game Description" DataField="description" />
+                                <asp:BoundField HeaderText="Game Price" DataField="displaycost" />
                                 <asp:CommandField ButtonType="Button" ShowEditButton="True" />
                                 <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />
                             </Columns>
