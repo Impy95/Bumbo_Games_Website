@@ -75,7 +75,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="CreateProducts.aspx.cs">
       <DependentUpon>CreateProducts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -83,11 +82,9 @@
     <Compile Include="CreateProducts.aspx.designer.cs">
       <DependentUpon>CreateProducts.aspx</DependentUpon>
     </Compile>
-=======
     <Content Include="DBHelper.cs" />
     <Content Include="App_Code\HelperTest.cs" />
     <Compile Include="DBHelper1.cs" />
->>>>>>> bf64472d49bc4b746174a091854acc6f1d94ae9a
     <Compile Include="DisplayProductInformation.aspx.cs">
       <DependentUpon>DisplayProductInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
