@@ -1,11 +1,12 @@
 CREATE PROCEDURE insertProduct
 	(@Name VARCHAR(50), 
 	@Description VARCHAR(255),
-	@UnitCost FLOAT,
-	@DisplayCost FLOAT,
+	@UnitCost MONEY,
+	@DisplayCost MONEY,
 	@Image VARCHAR(255),
-	@CategoryID INT,
-	@Hidden BIT)
+	@CategoryID INT = NULL,
+	@Hidden BIT
+	@IdOutput INT OUTPUT)
 AS
 BEGIN
 INSERT INTO [dbo].[Products](
@@ -22,5 +23,6 @@ VALUES (
 @DisplayCost,
 @Image,
 @Hidden)
+SET @IdOutput = SCOPE_IDENTITY()
 END
 GO

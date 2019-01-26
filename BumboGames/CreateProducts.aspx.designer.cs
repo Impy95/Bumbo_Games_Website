@@ -76,31 +76,76 @@ namespace BumboGames {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGameDesc;
         
         /// <summary>
-        /// txtGamePrice control.
+        /// txtGameDisplayPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGamePrice;
+        protected global::System.Web.UI.WebControls.TextBox txtGameDisplayPrice;
         
         /// <summary>
-        /// reqGamePrice control.
+        /// reqGameDisplayPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGamePrice;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGameDisplayPrice;
         
         /// <summary>
-        /// ValidationSummary1 control.
+        /// txtGameOriginPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        protected global::System.Web.UI.WebControls.TextBox txtGameOriginPrice;
+        
+        /// <summary>
+        /// reqGameOriginPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGameOriginPrice;
+        
+        /// <summary>
+        /// txtGameImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtGameImage;
+        
+        /// <summary>
+        /// reqGameImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGameImage;
+        
+        /// <summary>
+        /// chkbGameHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkbGameHidden;
+        
+        /// <summary>
+        /// vldsProduct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vldsProduct;
         
         /// <summary>
         /// lbtnCreate control.
@@ -112,12 +157,12 @@ namespace BumboGames {
         protected global::System.Web.UI.WebControls.LinkButton lbtnCreate;
         
         /// <summary>
-        /// lblCard1Summary control.
+        /// lblvalidatProductSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCard1Summary;
+        protected global::System.Web.UI.WebControls.Label lblvalidatProductSummary;
     }
 }
