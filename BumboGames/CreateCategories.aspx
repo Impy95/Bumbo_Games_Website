@@ -104,7 +104,7 @@
                                         CssClass="cursor"
                                         ForeColor="Red"
                                         ToolTip="Genre name is required"
-                                        ValidationGroup="Card1">*</asp:RequiredFieldValidator>
+                                        ValidationGroup="validateGenre">*</asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="row">
@@ -122,22 +122,22 @@
                                         CssClass="cursor"
                                         ForeColor="Red"
                                         ToolTip="Genre Description is required"
-                                        ValidationGroup="Card1">*</asp:RequiredFieldValidator>
+                                        ValidationGroup="validateGenre">*</asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Card1" ForeColor="Red"/>
+                                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGenre" ForeColor="Red"/>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:LinkButton ID="lbtnCreate"
                                         runat="server"
                                         CssClass="btn btn-dark"
-                                        ValidationGroup="Card1" OnClick="lbtnCreate_Click"
+                                        ValidationGroup="validateGenre" OnClick="lbtnCreate_Click"
                                         Width="97px">Create</asp:LinkButton>
                                 </div>
                                 <div class="col-md-3">
-                                    <asp:Label ID="lblCard1Summary" runat="server" Text=""></asp:Label>
+                                    <asp:Label ID="lblGenreSummary" runat="server" Text=""></asp:Label>
                                 </div>
                             </div>                   
                         </div>
