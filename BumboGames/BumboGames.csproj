@@ -92,7 +92,7 @@
     </Compile>
     <Content Include="DBHelper.cs" />
     <Content Include="App_Code\HelperTest.cs" />
-    <Compile Include="DBHelper1.cs" />
+    <Compile Include="App_Code\DBHelper1.cs" />
     <Compile Include="DisplayProductInformation.aspx.cs">
       <DependentUpon>DisplayProductInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

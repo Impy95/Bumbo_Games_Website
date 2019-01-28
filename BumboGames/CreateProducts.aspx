@@ -105,7 +105,7 @@
                                         CssClass="cursor"
                                         ForeColor="Red"
                                         ToolTip="Game name is required"
-                                        ValidationGroup="Card1">*</asp:RequiredFieldValidator>
+                                        ValidationGroup="validateProduct">*</asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="row">
@@ -123,40 +123,87 @@
                                         CssClass="cursor"
                                         ForeColor="Red"
                                         ToolTip="Game Description is required"
-                                        ValidationGroup="Card1">*</asp:RequiredFieldValidator>
+                                        ValidationGroup="validateProduct">*</asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <label>Game Price:</label>
+                                    <label>Game Display Price:</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <asp:TextBox ID="txtGamePrice" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtGameDisplayPrice" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="col-md-3">
-                                    <asp:RequiredFieldValidator ID="reqGamePrice"
+                                    <asp:RequiredFieldValidator ID="reqGameDisplayPrice"
                                         runat="server"
-                                        ErrorMessage="Game price is required"
-                                        ControlToValidate="txtGamePrice"
+                                        ErrorMessage="Game Display price is required"
+                                        ControlToValidate="txtGameDisplayPrice"
                                         CssClass="cursor"
                                         ForeColor="Red"
-                                        ToolTip="Game price is required"
-                                        ValidationGroup="Card1">*</asp:RequiredFieldValidator>
+                                        ToolTip="Game Display price is required"
+                                        ValidationGroup="validateProduct">*</asp:RequiredFieldValidator>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Game  Price:</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:TextBox ID="txtGameOriginPrice" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:RequiredFieldValidator ID="reqGameOriginPrice"
+                                        runat="server"
+                                        ErrorMessage="Game Origin price is required"
+                                        ControlToValidate="txtGameOriginPrice"
+                                        CssClass="cursor"
+                                        ForeColor="Red"
+                                        ToolTip="Game Origin price is required"
+                                        ValidationGroup="validateProduct">*</asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Game Image:</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:TextBox ID="txtGameImage" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:RequiredFieldValidator ID="reqGameImage"
+                                        runat="server"
+                                        ErrorMessage="Game Display price is required"
+                                        ControlToValidate="txtGameImage"
+                                        CssClass="cursor"
+                                        ForeColor="Red"
+                                        ToolTip="Game image is required"
+                                        ValidationGroup="validateProduct">*</asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Hidden:</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:CheckBox ID="chkbGameHidden" runat="server"></asp:CheckBox>
+                                </div>
+                            </div>
+
                             <div class="row">      
                                 <div class="col-md-4">
-                                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Card1" ForeColor="Red"/>
+                                    <asp:ValidationSummary ID="vldsProduct" runat="server" ValidationGroup="validateProduct" ForeColor="Red"/>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:LinkButton ID="lbtnCreate"
                                         runat="server"
                                         CssClass="btn btn-dark"
-                                        ValidationGroup="Card1" OnClick="lbtnCreate_Click"
+                                        ValidationGroup="validateProduct" OnClick="lbtnCreate_Click"
                                         Width="97px">Create</asp:LinkButton>
                                 </div>
                                 <div class="col-md-3">
-                                    <asp:Label ID="lblCard1Summary" runat="server" Text=""></asp:Label>
+                                    <asp:Label ID="lblvalidatProductSummary" runat="server" Text=""></asp:Label>
                                 </div>
                             </div>                   
                         </div>
