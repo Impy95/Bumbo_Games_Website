@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -39,6 +40,33 @@ namespace BumboGames
         {
             grvGames.PageIndex = e.NewPageIndex;
             //grvGames.DataBind();
+            DBHelper.DataBinding(this.grvGames, "getProducts");
+        }
+
+        string[] removedSearchWords = { "the", "at", "a", "and", "or", "this", "is" };
+        //TODO: Add Category Specific Search
+        //TODO: Find missing Databinding
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string[] searchWords = txtSearch.Text.Split(new Char[] { ',', ' ' });
+            List<SqlParameter> prms = new List<SqlParameter>();
+
+            //Match all words checkbox
+            prms.Add(new SqlParameter {
+                ParameterName = "@MatchAllWords",
+                SqlDbType = System.Data.SqlDbType.Bit,
+                Value = chkMatchAllWords.Checked
+            });
+
+            //Word 1
+            prms.Add(new SqlParameter
+            {
+                ParameterName = "@Keyword1",
+                SqlDbType = System.Data.SqlDbType.NVarChar,
+                Size = 50,
+                Value = searchWords[0]
+            });
+
             DBHelper.DataBinding(this.grvGames, "getProducts");
         }
     }

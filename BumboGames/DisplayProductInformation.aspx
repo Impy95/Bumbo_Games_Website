@@ -59,7 +59,10 @@
                             <asp:TextBox ID="txtSearch" runat="server" placeholder="Search" CssClass="form-control"></asp:TextBox>
                         </li>
                         <li>
-                            <asp:Button ID="btnSearch" runat="server" Text="Go" CssClass="btn btn-outline-dark my-2 my-sm-0" />
+                            <asp:CheckBox ID="chkMatchAllWords" runat="server" />
+                        </li>
+                        <li>
+                            <asp:Button ID="btnSearch" runat="server" Text="Go" CssClass="btn btn-outline-dark my-2 my-sm-0" OnClick="btnSearch_Click" />
                         </li>
                     </ul>
                 </div>
