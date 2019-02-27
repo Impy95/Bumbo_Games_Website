@@ -58,16 +58,17 @@ namespace BumboGames
                 Value = chkMatchAllWords.Checked
             });
 
-            //Word 1
-            prms.Add(new SqlParameter
+            for (int i = 0; i < searchWords.Length; i++)
             {
-                ParameterName = "@Keyword1",
-                SqlDbType = System.Data.SqlDbType.NVarChar,
-                Size = 50,
-                Value = searchWords[0]
-            });
-
-            DBHelper.DataBinding(this.grvGames, "getProducts");
+                prms.Add(new SqlParameter
+                {
+                    ParameterName = $"@Keyword{(i+1).ToString()}",
+                    SqlDbType = System.Data.SqlDbType.NVarChar,
+                    Size = 50,
+                    Value = searchWords[i]
+                });
+            }
+            DBHelper.DataBinding(this.grvGames, "SearchProducts",System.Data.CommandType.StoredProcedure, prms.ToArray());
         }
     }
 }
