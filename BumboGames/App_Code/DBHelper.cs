@@ -8,7 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
 
-namespace CandyStoreSample
+namespace BumboGames
 {
     public static class DBHelper
     {
@@ -213,7 +213,7 @@ namespace CandyStoreSample
         public static void Insert(string sqlStatement
         , SqlParameter[] prms, CommandType cmdType = CommandType.StoredProcedure)
         {
-
+           
 
             using (SqlConnection conn = new SqlConnection(ConnectionString()))
             {
@@ -229,7 +229,7 @@ namespace CandyStoreSample
 
                     conn.Open();
 
-                    cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();                   
 
                     conn.Close();//Not necessary as connection is within using
                 }
@@ -525,7 +525,7 @@ namespace CandyStoreSample
                 Value = value
             };
         }
-
+        
         #endregion
     }
 }

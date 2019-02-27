@@ -68,7 +68,7 @@ namespace BumboGames
                     Value = searchWords[i]
                 });
             }
-            DBHelper.DataBinding(this.grvGames, "SearchProducts",System.Data.CommandType.StoredProcedure, prms.ToArray());
+            DBHelper.DataBinding(this.grvGames, "SearchProducts", prms.ToArray());
         }
     }
 }

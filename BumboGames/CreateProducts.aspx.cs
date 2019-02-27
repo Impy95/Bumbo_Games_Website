@@ -63,8 +63,8 @@ namespace BumboGames
                 prms[6].SqlDbType = System.Data.SqlDbType.Int;
                 prms[6].Direction = System.Data.ParameterDirection.Output;
 
-                DBHelper.Insert("insertProduct",prms[6].ParameterName, prms);
-
+                int returnID = DBHelper.Insert<int>("insertProduct",prms[6].ParameterName, prms);
+                
 
 
                 //display results

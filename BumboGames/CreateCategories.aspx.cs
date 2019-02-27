@@ -41,7 +41,7 @@ namespace BumboGames
                 prms[2].Direction = System.Data.ParameterDirection.Output;
 
 
-                DBHelper.Insert("insertCategory", prms[2].ParameterName, prms);
+                int returnId = DBHelper.Insert<int>("insertCategory", prms[2].ParameterName, prms);
 
                 lblGenreSummary.Text = $"Genre Name: {this.txtGenreName.Text}<br />Genre Description: {this.txtGenreDesc.Text}";
             }

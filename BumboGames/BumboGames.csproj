@@ -67,15 +67,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CreateAccount.aspx" />
     <Content Include="CreateCategories.aspx" />
     <Content Include="CreateProducts.aspx" />
     <Content Include="DisplayProductInformation.aspx" />
     <Content Include="ManageCategories.aspx" />
     <Content Include="ManageProducts.aspx" />
     <Content Include="styles\styles.css" />
+    <Content Include="ucFooter.ascx" />
+    <Content Include="ucNavigation.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\DBHelper.cs" />
+    <Compile Include="CreateAccount.aspx.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateAccount.aspx.designer.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateCategories.aspx.cs">
       <DependentUpon>CreateCategories.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -90,9 +101,28 @@
     <Compile Include="CreateProducts.aspx.designer.cs">
       <DependentUpon>CreateProducts.aspx</DependentUpon>
     </Compile>
-    <Content Include="DBHelper.cs" />
+    <Compile Include="StorePage.Master.cs">
+      <DependentUpon>StorePage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StorePage.Master.designer.cs">
+      <DependentUpon>StorePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ucFooter.ascx.cs">
+      <DependentUpon>ucFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucFooter.ascx.designer.cs">
+      <DependentUpon>ucFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucNavigation.ascx.cs">
+      <DependentUpon>ucNavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucNavigation.ascx.designer.cs">
+      <DependentUpon>ucNavigation.ascx</DependentUpon>
+    </Compile>
     <Content Include="App_Code\HelperTest.cs" />
-    <Compile Include="App_Code\DBHelper1.cs" />
     <Compile Include="DisplayProductInformation.aspx.cs">
       <DependentUpon>DisplayProductInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -118,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="StorePage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
