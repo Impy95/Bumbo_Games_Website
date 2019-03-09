@@ -1,10 +1,10 @@
-CREATE PROCEDURE insertCategory(@Name VARCHAR(50), @Description VARCHAR(255), @IdOutput INT OUTPUT)
+CREATE OR ALTER PROCEDURE insertCategory(@Name VARCHAR(50), @Description VARCHAR(255), @IdOutput INT OUTPUT)
 
 AS
 BEGIN
 INSERT INTO [dbo].[Category](
-CategoryName,
-CategoryDescription)
+name,
+description)
 VALUES (
 @Name,
 @Description)

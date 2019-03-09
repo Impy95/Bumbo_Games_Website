@@ -33,5 +33,5 @@
     <asp:Label ID="lblEmail" runat="server" Text="Email Address:"></asp:Label>
     <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox><br />
 
-    <asp:Button runat="server" ID="btnCreateAccount" Text="Create"/>
+    <asp:Button runat="server" ID="btnCreateAccount" Text="Create" OnClick="btnCreateAccount_Click"/>
 </asp:Content>

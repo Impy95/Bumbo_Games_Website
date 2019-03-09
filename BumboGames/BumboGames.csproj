@@ -72,7 +72,7 @@
     <Content Include="CreateProducts.aspx" />
     <Content Include="DisplayProductInformation.aspx" />
     <Content Include="ManageCategories.aspx" />
-    <Content Include="ManageProducts.aspx" />
+    <Content Include="ProductMaintenance.aspx" />
     <Content Include="styles\styles.css" />
     <Content Include="ucFooter.ascx" />
     <Content Include="ucNavigation.ascx" />
@@ -100,6 +100,13 @@
     </Compile>
     <Compile Include="CreateProducts.aspx.designer.cs">
       <DependentUpon>CreateProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductMaintenance.aspx.cs">
+      <DependentUpon>ProductMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductMaintenance.aspx.designer.cs">
+      <DependentUpon>ProductMaintenance.aspx</DependentUpon>
     </Compile>
     <Compile Include="StorePage.Master.cs">
       <DependentUpon>StorePage.Master</DependentUpon>
@@ -136,13 +143,6 @@
     </Compile>
     <Compile Include="ManageCategories.aspx.designer.cs">
       <DependentUpon>ManageCategories.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageProducts.aspx.cs">
-      <DependentUpon>ManageProducts.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageProducts.aspx.designer.cs">
-      <DependentUpon>ManageProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

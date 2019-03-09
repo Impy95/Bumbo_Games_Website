@@ -88,7 +88,7 @@
                     </div>
                     <div class="col-md-8">
                         <h3 class="center">Games</h3>
-                        <asp:GridView ID="grvGamesEdit" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="5">
+                        <asp:GridView ID="grvGamesEdit" runat="server" AutoGenerateColumns="False" AllowPaging="false" PageSize="5">
                             <Columns>
                                 <asp:ImageField>
                                 </asp:ImageField>

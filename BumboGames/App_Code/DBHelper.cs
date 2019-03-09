@@ -454,11 +454,11 @@ namespace BumboGames
             };
         }
 
-        public static SqlParameter SetProductStatusCodeParam(bool value)
+        public static SqlParameter SetProductHiddenParam(bool value)
         {
             return new SqlParameter()
             {
-                ParameterName = "@StatusCode",
+                ParameterName = "@Hidden",
                 SqlDbType = SqlDbType.Bit,
                 Value = value
             };
