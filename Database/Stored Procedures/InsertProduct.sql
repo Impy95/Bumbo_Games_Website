@@ -4,7 +4,7 @@ CREATE OR ALTER PROCEDURE insertProduct
 @ProductName NVARCHAR(50),
 @ProductBriefDesc NVARCHAR(MAX),
 @ProductFullDesc NVARCHAR(MAX),
-@StatusCode BIT,
+@Hidden BIT,
 @ProductPrice MONEY,
 @Featured BIT,
 @CategoryId INT,
@@ -42,7 +42,7 @@ BEGIN TRANSACTION
 	
 	INSERT INTO Products 
 	([name],briefDescription,fullDescription,hidden,price,featured,categoryId,imageId)
-	VALUES (@ProductName,@ProductBriefDesc,@ProductFullDesc,@StatusCode,@ProductPrice,@Featured,@CategoryId,@ImageID)	
+	VALUES (@ProductName,@ProductBriefDesc,@ProductFullDesc,@Hidden,@ProductPrice,@Featured,@CategoryId,@ImageID)	
 		
 	IF @@Error<>0
 		BEGIN

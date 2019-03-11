@@ -26,8 +26,8 @@ namespace BumboGames
         {
             DBHelper.DataBindingWithPaging(this.grdProducts, "SelectProductMaintenance");
             //Load the dropdown list in the create row
-            //DropDownList ddlCategoriesInFooter = (DropDownList)(this.grdProducts.FooterRow.FindControl("ddlCategoriesNew"));
-            //BindCategoryDropdownList(ddlCategoriesInFooter);
+            DropDownList ddlCategoriesInFooter = (DropDownList)(this.grdProducts.FooterRow.FindControl("ddlCategoriesNew"));
+            BindCategoryDropdownList(ddlCategoriesInFooter);
 
         }
         protected void grdProducts_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -59,7 +59,7 @@ namespace BumboGames
             TextBox txtProductName = (TextBox)this.grdProducts.Rows[e.RowIndex].FindControl("txtProductName");
             TextBox txtBriefDesc = (TextBox)this.grdProducts.Rows[e.RowIndex].FindControl("txtBriefDesc");
             TextBox txtFullDesc = (TextBox)this.grdProducts.Rows[e.RowIndex].FindControl("txtFullDesc");
-            TextBox txtPrice = (TextBox)this.grdProducts.FooterRow.FindControl("txtPrice");
+            TextBox txtPrice = (TextBox)this.grdProducts.Rows[e.RowIndex].FindControl("txtPrice");
             CheckBox chkFeatured = (CheckBox)this.grdProducts.Rows[e.RowIndex].FindControl("chkFeatured");
             CheckBox chkStatus = (CheckBox)this.grdProducts.Rows[e.RowIndex].FindControl("chkStatus");
             FileUpload uplImage = (FileUpload)this.grdProducts.Rows[e.RowIndex].FindControl("uplUpdateImage");
@@ -106,7 +106,7 @@ namespace BumboGames
             {
                 lblError.Text = ex.Message;
             }
-
+            grdProducts.EditIndex = -1;
             LoadProductsGridView();
         }
 

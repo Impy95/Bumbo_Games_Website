@@ -1,4 +1,4 @@
-CREATE PROCEDURE getProducts
+CREATE OR ALTER PROCEDURE getProducts
 AS
 BEGIN
 Select * From Products
