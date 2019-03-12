@@ -59,7 +59,7 @@
                         <asp:TextBox ID="txtFullDescNew" runat="server"></asp:TextBox>
                     </FooterTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Active">
+                <asp:TemplateField HeaderText="Hidden">
                     <EditItemTemplate>
                         <asp:CheckBox ID="chkStatus" runat="server" Checked='<%# Bind("hidden") %>' />
                     </EditItemTemplate>

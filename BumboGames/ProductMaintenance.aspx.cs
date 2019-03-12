@@ -41,13 +41,14 @@ namespace BumboGames
             }
         }
 
-        //TODO: DELETE PROCEDURE
+
+        //TODO: Deleting product does not validate order/cart status
         protected void grdProducts_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            //int productId = Convert.ToInt32(this.grdProducts.DataKeys[e.RowIndex].Values[0]);
-            //SqlParameter prmProductId = new SqlParameter() { ParameterName = "@ProductId", SqlDbType = SqlDbType.Int, Value = productId };
+            int productId = Convert.ToInt32(this.grdProducts.DataKeys[e.RowIndex].Values[0]);
+            SqlParameter prmProductId = new SqlParameter() { ParameterName = "@ProductId", SqlDbType = SqlDbType.Int, Value = productId };
 
-            //DBHelper.NonQuery("DeleteProduct", new SqlParameter[] { prmProductId });
+            DBHelper.NonQuery("DeleteProduct", new SqlParameter[] { prmProductId });
 
             LoadProductsGridView();
         }
