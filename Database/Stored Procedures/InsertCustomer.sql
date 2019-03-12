@@ -1,6 +1,6 @@
 use bumbogames
 GO
-CREATE PROCEDURE InsertCustomer
+CREATE OR ALTER PROCEDURE InsertCustomer
 @Email NVARCHAR(50),
 @Username NVARCHAR(50),
 @FirstName NVARCHAR(20),

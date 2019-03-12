@@ -70,12 +70,15 @@
     <Content Include="CreateAccount.aspx" />
     <Content Include="CreateCategories.aspx" />
     <Content Include="CreateProducts.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="DisplayProductInformation.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="ManageCategories.aspx" />
     <Content Include="ProductMaintenance.aspx" />
     <Content Include="styles\styles.css" />
     <Content Include="ucFooter.ascx" />
     <Content Include="ucNavigation.ascx" />
+    <Content Include="ucProducts.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +103,20 @@
     </Compile>
     <Compile Include="CreateProducts.aspx.designer.cs">
       <DependentUpon>CreateProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductMaintenance.aspx.cs">
       <DependentUpon>ProductMaintenance.aspx</DependentUpon>
@@ -128,6 +145,13 @@
     </Compile>
     <Compile Include="ucNavigation.ascx.designer.cs">
       <DependentUpon>ucNavigation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucProducts.ascx.cs">
+      <DependentUpon>ucProducts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucProducts.ascx.designer.cs">
+      <DependentUpon>ucProducts.ascx</DependentUpon>
     </Compile>
     <Content Include="App_Code\HelperTest.cs" />
     <Compile Include="DisplayProductInformation.aspx.cs">

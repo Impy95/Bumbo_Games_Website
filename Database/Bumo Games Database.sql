@@ -74,7 +74,7 @@ EXEC	[dbo].[insertProduct]
 		@ProductName = N'Warbut',
 		@ProductBriefDesc = N'but its war ',
 		@ProductFullDesc = N'but it is time for war and warbut',
-		@Hidden = 1,
+		@Hidden = 0,
 		@ProductPrice = 12.50,
 		@Featured = 1,
 		@CategoryId = 1,
@@ -89,7 +89,7 @@ EXEC	[dbo].[insertProduct]
 		@ProductName = N'Warbut2',
 		@ProductBriefDesc = N'WOAH A NEW GAME  ',
 		@ProductFullDesc = N'THATS AMAZING',
-		@Hidden = 1,
+		@Hidden = 0,
 		@ProductPrice = 12.51,
 		@Featured = 1,
 		@CategoryId = 1,
@@ -98,3 +98,27 @@ EXEC	[dbo].[insertProduct]
 		@AltText = N'image',
 		@Id = @Id OUTPUT
 		GO
+		GO
+
+DECLARE	@return_value int,
+		@Identity int
+
+EXEC	@return_value = [dbo].[InsertCustomer]
+		@Email = N'hossboss@gmail.com',
+		@Username = N'hossboss5',
+		@FirstName = N'Hoss',
+		@LastName = N'Boss',
+		@Pwd = N'password',
+		@Street = N'123 Hosstreet',
+		@City = N'this city',
+		@Province = N'NB',
+		@Pcode = N'123ABC',
+		@Phone = N'1231231234',
+		@Identity = @Identity OUTPUT
+
+SELECT	@Identity as N'@Identity'
+
+SELECT	'Return Value' = @return_value
+
+GO
+
