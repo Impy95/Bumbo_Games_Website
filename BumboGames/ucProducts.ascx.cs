@@ -9,8 +9,7 @@ using System.Web.UI.WebControls;
 
 //TODO::FIX CSS(Bootstrap)
 namespace BumboGames
-{//TODO::Add Common to the project
- //NOTE:: Common is a helper class used in prev projects
+{
     public partial class ucProducts : System.Web.UI.UserControl
     {
         public bool Featured { get; set; }
@@ -77,7 +76,6 @@ namespace BumboGames
                 ProductCountMessage();
             }
         }
-        //TODO:: Implement Search
         private void ProductSearch()
         {
             List<string> searchKeys = Request.QueryString.AllKeys.Where(q => q.Contains("word")).ToList();
@@ -222,29 +220,29 @@ namespace BumboGames
         private void AddToCart(int productId)
         {
             //Get the Cart Guid from the Cookie or Make a new one
-            //string CartUId = Common.GetCartId(Request, Response);
+            string CartUId = Common.GetCartId(Request, Response);
 
-            //List<SqlParameter> prms = new List<SqlParameter>();
-            //prms.Add(ProductParamHelper(productId));
+            List<SqlParameter> prms = new List<SqlParameter>();
+            prms.Add(ProductParamHelper(productId));
 
-            //prms.Add(new SqlParameter()
-            //{
-            //    ParameterName = "@CartUId",
-            //    SqlDbType = SqlDbType.VarChar,
-            //    Size = 50,
-            //    Value = CartUId
-            //});
+            prms.Add(new SqlParameter()
+            {
+                ParameterName = "@CartUId",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 50,
+                Value = CartUId
+            });
 
-            //prms.Add(new SqlParameter()
-            //{
-            //    ParameterName = "@Qty",
-            //    SqlDbType = SqlDbType.Int,
-            //    Value = 1
-            //});
+            prms.Add(new SqlParameter()
+            {
+                ParameterName = "@Qty",
+                SqlDbType = SqlDbType.Int,
+                Value = 1
+            });
 
-            //DBHelper.NonQuery("AddToCart", prms.ToArray());
+            DBHelper.NonQuery("AddToCart", prms.ToArray());
 
-            //Response.Redirect("~/Cart.aspx");
+            Response.Redirect("~/Cart.aspx");
         }
     }
 }

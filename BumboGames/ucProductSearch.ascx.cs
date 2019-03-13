@@ -17,7 +17,7 @@ namespace BumboGames
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             string queryString = $"{ QueryStringBuilder() }&all={this.chkAllWords.Checked}";
-            Response.Redirect($"~/Products.aspx{queryString}");
+            Response.Redirect($"~/Default.aspx{queryString}");
         }
 
         private string QueryStringBuilder()

@@ -10,60 +10,69 @@
 namespace BumboGames {
     
     
-    public partial class StorePage {
+    public partial class Cart {
         
         /// <summary>
-        /// head control.
+        /// grdCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.GridView grdCart;
         
         /// <summary>
-        /// form1 control.
+        /// lblTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblTotal;
         
         /// <summary>
-        /// ucNavigation control.
+        /// lblCartTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::BumboGames.ucNavigation ucNavigation;
+        protected global::System.Web.UI.WebControls.Label lblCartTotal;
         
         /// <summary>
-        /// ucProductSearch control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::BumboGames.ucProductSearch ucProductSearch;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
-        /// phrContent control.
+        /// btnUpdateCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder phrContent;
+        protected global::System.Web.UI.WebControls.Button btnUpdateCart;
         
         /// <summary>
-        /// ucFooter control.
+        /// btnContinueShopping control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::BumboGames.ucFooter ucFooter;
+        protected global::System.Web.UI.WebControls.Button btnContinueShopping;
+        
+        /// <summary>
+        /// btnCheckout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCheckout;
     }
 }
