@@ -2,12 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
-    <h5 style="text-align:center" class="candy-border">Shopping Cart</h5>
+ <h5 style="text-align:center" class="candy-border">Shopping Cart</h5>
     <asp:GridView ID="grdCart" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductId">
         <Columns>
             <asp:TemplateField HeaderText="Product Id">
                 <ItemTemplate>
-                    <asp:HyperLink ID="hypProduct" runat="server" NavigateUrl='<%# Eval("ProductId","Products.aspx?id={0}") %>' Text='<%# Eval("ProductId") %>'></asp:HyperLink>
+                    <asp:HyperLink ID="hypProduct" runat="server" NavigateUrl='<%# Eval("ProductId","Default.aspx?id={0}") %>' Text='<%# Eval("ProductId") %>'></asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField HeaderText="Product Name" DataField="ProductName" />
@@ -28,8 +28,8 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
-
-        <div style="text-align:center">
+    </asp:GridView>
+    <div style="text-align:center">
         <asp:Label ID="lblTotal" runat="server" Text="Total:" EnableViewState="false"></asp:Label> <asp:Label ID="lblCartTotal" runat="server" Text="" Font-Bold="true" EnableViewState="false"></asp:Label>
     </div>
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Group1"/>
@@ -38,5 +38,4 @@
         OnClick="btnUpdateCart_Click" Width="99px" CssClass="crs"
         ValidationGroup="Group1"
         /> <asp:Button ID="btnContinueShopping" runat="server" Text="Continue Shopping" Width="151px" OnClick="btnContinueShopping_Click" CssClass="crs" /> <asp:Button ID="btnCheckout" runat="server" Text="Check Out" Width="94px" OnClick="btnCheckout_Click" CssClass="crs" />
-        </asp:GridView>
 </asp:Content>

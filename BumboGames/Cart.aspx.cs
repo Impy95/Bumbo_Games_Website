@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 namespace BumboGames
 {
     public partial class Cart : System.Web.UI.Page
-    {
+    { 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -106,7 +106,7 @@ namespace BumboGames
 
         protected void btnCheckout_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("~/Checkout.aspx");
+            Response.Redirect("~/Checkout.aspx");
         }
     }
 }
