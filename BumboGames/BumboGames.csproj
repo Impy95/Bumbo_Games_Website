@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cart.aspx" />
+    <Content Include="Checkout.aspx" />
     <Content Include="CreateAccount.aspx" />
     <Content Include="CreateCategories.aspx" />
     <Content Include="CreateProducts.aspx" />
@@ -77,6 +78,7 @@
     <Content Include="ManageCategories.aspx" />
     <Content Include="ProductMaintenance.aspx" />
     <Content Include="styles\styles.css" />
+    <Content Include="ucCategoryList.ascx" />
     <Content Include="ucFooter.ascx" />
     <Content Include="ucNavigation.ascx" />
     <Content Include="ucProducts.ascx" />
@@ -92,6 +94,13 @@
     </Compile>
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateAccount.aspx.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>
@@ -141,6 +150,13 @@
     </Compile>
     <Compile Include="StorePage.Master.designer.cs">
       <DependentUpon>StorePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ucCategoryList.ascx.cs">
+      <DependentUpon>ucCategoryList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucCategoryList.ascx.designer.cs">
+      <DependentUpon>ucCategoryList.ascx</DependentUpon>
     </Compile>
     <Compile Include="ucFooter.ascx.cs">
       <DependentUpon>ucFooter.ascx</DependentUpon>

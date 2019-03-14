@@ -29,7 +29,7 @@ namespace BumboGames
                 if (Request.QueryString["returnurl"] != null)
                     Response.Redirect($"~/{Request.QueryString["returnurl"]}");
                 else
-                    Response.Redirect("~/DisplayProductInformation.aspx");
+                    Response.Redirect("~/Default.aspx");
             }
         }
 
