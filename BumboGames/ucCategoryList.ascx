@@ -7,7 +7,7 @@
             CssClass="categories-datalist"
             ID="hypCategories"
             runat="server"
-            NavigateUrl='<%# Eval("id","Default.aspx?categoryId={0}") %>'
+            NavigateUrl='<%# Eval("id","Products.aspx?categoryId={0}") %>'
             Text='<%# Eval("name") %>'></asp:HyperLink>
     </ItemTemplate>
 </asp:DataList>

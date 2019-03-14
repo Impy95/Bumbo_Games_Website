@@ -1,13 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="BumboGames.Cart" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
  <h5 style="text-align:center" class="candy-border">Shopping Cart</h5>
     <asp:GridView ID="grdCart" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductId">
         <Columns>
             <asp:TemplateField HeaderText="Product Id">
                 <ItemTemplate>
-                    <asp:HyperLink ID="hypProduct" runat="server" NavigateUrl='<%# Eval("ProductId","Default.aspx?id={0}") %>' Text='<%# Eval("ProductId") %>'></asp:HyperLink>
+                    <asp:HyperLink ID="hypProduct" runat="server" NavigateUrl='<%# Eval("ProductId","Products.aspx?id={0}") %>' Text='<%# Eval("ProductId") %>'></asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField HeaderText="Product Name" DataField="ProductName" />

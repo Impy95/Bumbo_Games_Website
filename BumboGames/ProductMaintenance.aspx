@@ -1,6 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="ProductMaintenance.aspx.cs" Inherits="BumboGames.ProductMaintenance" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
 
      <div style="padding-bottom: 20px;">

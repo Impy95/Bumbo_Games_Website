@@ -40,15 +40,6 @@ namespace BumboGames {
         protected global::BumboGames.ucNavigation ucNavigation;
         
         /// <summary>
-        /// ucProductSearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::BumboGames.ucProductSearch ucProductSearch;
-        
-        /// <summary>
         /// categorySideBar control.
         /// </summary>
         /// <remarks>

@@ -31,7 +31,7 @@
     <form id="form1" runat="server">
         <div>
             <uc1:ucNavigation runat="server" ID="ucNavigation" />
-            <uc1:ucProductSearch runat="server" ID="ucProductSearch" />
+            
             <asp:ContentPlaceHolder ID ="categorySideBar" runat="server">
                 <uc1:ucCategoryList runat="server" ID="ucCategoryList" />
             </asp:ContentPlaceHolder>
