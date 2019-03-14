@@ -11,7 +11,14 @@ namespace BumboGames
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            GetCartCount();
+        }
 
+        private void GetCartCount()
+        {
+            string cartId = Common.GetCartId(Request, Response);
+            int count = Common.GetCartCount(cartId);
+            //this.lblCartItemsCount.Text = count == 1 ? $"{count} item in cart" : count > 1 ? $"{count} items in cart" : "";
         }
     }
 }
