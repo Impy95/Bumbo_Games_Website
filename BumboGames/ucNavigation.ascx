@@ -5,27 +5,6 @@
             <li class="nav-item active px-4">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown active px-4">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Genres
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Adventure</a>
-                    <!--<div class="dropdown-divider"></div>-->
-                    <a class="dropdown-item" href="#">Platforming</a>
-                    <a class="dropdown-item" href="#">RPG</a>
-                    <a class="dropdown-item" href="#">Sports</a>
-                    <a class="dropdown-item" href="#">Survival</a>
-                    <a class="dropdown-item" href="#">Text Adventure</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">All Genres</a>
-                </div>
-            </li>
-            <!--
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Genres</a>
-                        </li>
-                        -->
             <li class="nav-item active px-4">
                 <a class="nav-link" href="#">Top Products</a>
             </li>

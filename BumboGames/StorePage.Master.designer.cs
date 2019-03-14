@@ -49,6 +49,24 @@ namespace BumboGames {
         protected global::BumboGames.ucProductSearch ucProductSearch;
         
         /// <summary>
+        /// categorySideBar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder categorySideBar;
+        
+        /// <summary>
+        /// ucCategoryList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::BumboGames.ucCategoryList ucCategoryList;
+        
+        /// <summary>
         /// phrContent control.
         /// </summary>
         /// <remarks>
