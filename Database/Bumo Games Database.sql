@@ -8,6 +8,8 @@ DROP TABLE IF EXISTS SiteImages
 DROP TABLE IF EXISTS Cart
 DROP TABLE IF EXISTS OrderDetails
 DROP TABLE IF EXISTS Orders
+DROP TABLE IF EXISTS adminLogin
+DROP TYPE IF EXISTS OrderDetail
 
 
 Create Table Products(
@@ -67,13 +69,18 @@ orderNumber INT NOT NULL FOREIGN KEY REFERENCES Orders(orderNumber),
 productId INT NOT NULL,
 quantity INT NOT NULL
 )
-
+CREATE TABLE adminLogin(
+id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+email NVARCHAR(50) NOT NULL,
+password NVARCHAR(15) NOT NULL
+)
 
 CREATE TYPE OrderDetail AS TABLE(
 ProductId INT NOT NULL,
 Qty INT NOT NULL
 )
 
+INSERT INTO adminLogin VALUES ('bumboAdmin','admin2019')
 GO
 DECLARE @IdOutput INT
 EXEC insertCategory 
