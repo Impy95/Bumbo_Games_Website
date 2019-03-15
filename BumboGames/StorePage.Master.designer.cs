@@ -31,6 +31,15 @@ namespace BumboGames {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// navigation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder navigation;
+        
+        /// <summary>
         /// ucNavigation control.
         /// </summary>
         /// <remarks>
