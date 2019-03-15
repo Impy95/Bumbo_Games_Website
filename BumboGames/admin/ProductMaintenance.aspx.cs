@@ -9,10 +9,11 @@ using System.Web.UI.WebControls;
 
 namespace BumboGames
 {
-    public partial class ProductMaintenance : System.Web.UI.Page
+    public partial class ProductMaintenance : App_Code.AdminPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            base.Page_Load(sender, e);
             lblMessage.Text = "";
 
             if (!IsPostBack)

@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="AdminDashboard.aspx.cs" Inherits="BumboGames.admin.AdminDashboard" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <!--REMOVE DEFAULT HEADER -->
+
+<%@ Register Src="~/admin/ucAdminNav.ascx" TagPrefix="uc1" TagName="ucAdminNav" %>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="navigation" runat="server">
+    <uc1:ucAdminNav runat="server" id="ucAdminNav" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="categorySideBar" runat="server">
 </asp:Content>

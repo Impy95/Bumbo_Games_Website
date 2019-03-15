@@ -78,9 +78,10 @@
     <Content Include="DisplayProductInformation.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="ManageCategories.aspx" />
-    <Content Include="ProductMaintenance.aspx" />
+    <Content Include="admin\ProductMaintenance.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="styles\styles.css" />
+    <Content Include="admin\ucAdminNav.ascx" />
     <Content Include="ucCategoryList.ascx" />
     <Content Include="ucFooter.ascx" />
     <Content Include="ucNavigation.ascx" />
@@ -157,11 +158,11 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductMaintenance.aspx.cs">
+    <Compile Include="admin\ProductMaintenance.aspx.cs">
       <DependentUpon>ProductMaintenance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductMaintenance.aspx.designer.cs">
+    <Compile Include="admin\ProductMaintenance.aspx.designer.cs">
       <DependentUpon>ProductMaintenance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products.aspx.cs">
@@ -177,6 +178,13 @@
     </Compile>
     <Compile Include="StorePage.Master.designer.cs">
       <DependentUpon>StorePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ucAdminNav.ascx.cs">
+      <DependentUpon>ucAdminNav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ucAdminNav.ascx.designer.cs">
+      <DependentUpon>ucAdminNav.ascx</DependentUpon>
     </Compile>
     <Compile Include="ucCategoryList.ascx.cs">
       <DependentUpon>ucCategoryList.ascx</DependentUpon>
