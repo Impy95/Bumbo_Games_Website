@@ -214,21 +214,16 @@ namespace BumboGames
         //converts form to update display
         private void intializeUpdateFields()
         {
-            txtUsername.Attributes.Add("style", "display:none;");
-            lblUsername.Attributes.Add("style", "display:none;");
-
-            txtPassword.Attributes.Add("style", "display:none;");
-            lblPassword.Attributes.Add("style", "display:none;");
-
-            txtConfirmPassword.Attributes.Add("style", "display:none;");
-            lblConfirmPassword.Attributes.Add("style", "display:none;");
-
+            txtUsername.Enabled = false;
+            txtPassword.Enabled = false;
+            txtConfirmPassword.Enabled = false;
             //todo:: add "If admin"
-            txtFirstName.Attributes.Add("style", "display:none;");
-            lblFirstName.Attributes.Add("style", "display:none;");
-            txtMiddleName.Attributes.Add("style", "display:none;"); ;
-            lblMiddleName.Attributes.Add("style", "display:none;");
-            btnCreateAccount.Attributes.Add("style", "display:none;");
+            if (Session["admin"] != null)
+            {
+                txtFirstName.Enabled = false;
+                txtMiddleName.Enabled = false;
+            }
+            btnCreateAccount.Visible = false;
             btnUpdateAccount.Visible = true;
         }
 

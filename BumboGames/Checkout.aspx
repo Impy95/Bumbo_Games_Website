@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="Checkout.aspx.cs" Inherits="BumboGames.Checkout" %>
+<asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
      <div id="notLoggedIn" runat="server" visible="false">
         You are not logged in. <a href="Login.aspx?returnurl=checkout.aspx">Login</a> or <a href="AccountCreation.aspx?returnurl=checkout.aspx">create a new account</a> to complete your order
@@ -25,6 +27,9 @@
         <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
     </asp:DetailsView>
+    <asp:Label ID="lblUpdateAccountPrompt" runat="server">
+        Not correct? You can update your account info </asp:Label>
+    <asp:HyperLink Text="here" ID="hypCreateAccount" NavigateUrl="~/CreateAccount.aspx" runat="server" />
     <h5 class="candy-border" style="text-align:center;" runat="server" id="order">Order Details</h5>
     <!--Order Total-->
     <asp:GridView ID="grdCart" runat="server" 

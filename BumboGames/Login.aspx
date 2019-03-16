@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="BumboGames.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
     <div>
         <asp:Login ID="lgnUser" runat="server" BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" OnAuthenticate="lgnUser_Authenticate" 

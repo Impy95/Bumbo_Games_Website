@@ -40,6 +40,24 @@ namespace BumboGames {
         protected global::System.Web.UI.WebControls.DetailsView detUser;
         
         /// <summary>
+        /// lblUpdateAccountPrompt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUpdateAccountPrompt;
+        
+        /// <summary>
+        /// hypCreateAccount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypCreateAccount;
+        
+        /// <summary>
         /// order control.
         /// </summary>
         /// <remarks>

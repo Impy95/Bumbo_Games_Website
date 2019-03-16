@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="CreateAccount.aspx.cs" Inherits="BumboGames.CreateAccount" %>
-
+<asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
+</asp:Content>
 <asp:Content ID="AccountForm" ContentPlaceHolderID="phrContent" runat="server">
     <asp:Label ID="lblHeader" runat="server"></asp:Label>
     <asp:Label ID="lblFirstName" runat="server" Text="First Name:"></asp:Label>

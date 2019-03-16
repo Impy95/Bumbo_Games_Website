@@ -30,6 +30,7 @@ namespace BumboGames
                 this.btnUpdateCart.Visible = false;
                 this.lblTotal.Text = "No items in cart";
                 this.lblCartTotal.Visible = false;
+                
             }
 
         }

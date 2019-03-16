@@ -23,6 +23,8 @@ namespace BumboGames
                 lblTotal.Visible = false;
                 ship.Visible = false;
                 order.Visible = false;
+                lblUpdateAccountPrompt.Visible = false;
+                hypCreateAccount.Visible = false;
             }
             else
             {
