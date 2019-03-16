@@ -18,11 +18,54 @@ namespace BumboGames
 
             if (!IsPostBack)
             {
-                LoadProductsGridView();
+                string categoryId = Request.QueryString["categoryId"];
+                if (!string.IsNullOrEmpty(categoryId))
+                {
+                    int category = 0;
+
+                    if (Int32.TryParse(categoryId, out category))
+                    {
+                        List<SqlParameter> prms = new List<SqlParameter>();
+                        prms.Add(CategoryParamHelper(category));
+                        this.lblMessage.Text = $"Products in Category: {DBHelper.GetQueryValue<string>("SelectCategories", "name", prms.ToArray())}";
+
+                        LoadProductsGridViewByCategory(category);
+                    }
+                    else
+                    {
+                        this.lblMessage.Text = "No such category";
+                    }
+                }
+                else
+                {
+                    LoadProductsGridView();
+                }
 
             }
         }
+        private SqlParameter CategoryParamHelper(int categoryId)
+        {
+            return new SqlParameter()
+            {
+                ParameterName = "@CategoryId",
+                SqlDbType = SqlDbType.Int,
+                Value = categoryId
+            };
+        }
 
+
+        private void LoadProductsGridViewByCategory(int category)
+        {
+            List<SqlParameter> prms = new List<SqlParameter>();
+            prms.Add(CategoryParamHelper(category));
+            DBHelper.DataBindingWithPaging(this.grdProducts, "SelectProductMaintenance",prms.ToArray());
+            //Load the dropdown list in the create row
+            if (grdProducts.Rows.Count != 0)
+            {
+                DropDownList ddlCategoriesInFooter = (DropDownList)(this.grdProducts.FooterRow.FindControl("ddlCategoriesNew"));
+                BindCategoryDropdownList(ddlCategoriesInFooter);
+            }
+        }
         private void LoadProductsGridView()
         {
             DBHelper.DataBindingWithPaging(this.grdProducts, "SelectProductMaintenance");

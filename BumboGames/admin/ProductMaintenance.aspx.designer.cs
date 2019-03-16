@@ -13,6 +13,24 @@ namespace BumboGames {
     public partial class ProductMaintenance {
         
         /// <summary>
+        /// ucAdminNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::BumboGames.ucAdminNav ucAdminNav;
+        
+        /// <summary>
+        /// ucCategoryListMaintenance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::BumboGames.ucCategoryListMaintenance ucCategoryListMaintenance;
+        
+        /// <summary>
         /// lblError control.
         /// </summary>
         /// <remarks>

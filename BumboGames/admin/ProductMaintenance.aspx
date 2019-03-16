@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="ProductMaintenance.aspx.cs" Inherits="BumboGames.ProductMaintenance" %>
+
+<%@ Register Src="~/ucCategoryListMaintenance.ascx" TagPrefix="uc1" TagName="ucCategoryListMaintenance" %>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
+    <uc1:ucCategoryListMaintenance runat="server" id="ucCategoryListMaintenance" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
 

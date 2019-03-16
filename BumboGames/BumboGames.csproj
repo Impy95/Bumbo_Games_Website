@@ -84,6 +84,7 @@
     <Content Include="styles\styles.css" />
     <Content Include="admin\ucAdminNav.ascx" />
     <Content Include="ucCategoryList.ascx" />
+    <Content Include="ucCategoryListMaintenance.ascx" />
     <Content Include="ucFooter.ascx" />
     <Content Include="ucNavigation.ascx" />
     <Content Include="ucProducts.ascx" />
@@ -200,6 +201,13 @@
     </Compile>
     <Compile Include="ucCategoryList.ascx.designer.cs">
       <DependentUpon>ucCategoryList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucCategoryListMaintenance.ascx.cs">
+      <DependentUpon>ucCategoryListMaintenance.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucCategoryListMaintenance.ascx.designer.cs">
+      <DependentUpon>ucCategoryListMaintenance.ascx</DependentUpon>
     </Compile>
     <Compile Include="ucFooter.ascx.cs">
       <DependentUpon>ucFooter.ascx</DependentUpon>

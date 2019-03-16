@@ -3,6 +3,7 @@ GO
 
 CREATE OR ALTER PROCEDURE SelectProductMaintenance 
 @ProductId INT = NULL,
+@CategoryId INT = NULL,
 @Keyword NVARCHAR(MAX) = NULL
 AS
 BEGIN
@@ -17,6 +18,8 @@ BEGIN
 	FROM Products p
 	WHERE 
 	(@ProductId IS NULL OR p.id = @ProductId)
+	AND
+	(@CategoryId IS NULL OR p.categoryID = @CategoryId)
 	AND
 	(@Keyword IS NULL OR 
 		(
