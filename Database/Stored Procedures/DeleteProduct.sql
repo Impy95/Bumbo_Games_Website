@@ -7,7 +7,7 @@ AS
 BEGIN TRANSACTION
 	SET NOCOUNT ON
 	BEGIN
-/*		IF EXISTS (SELECT * FROM Cart WHERE prodId=@ProductId)
+		IF EXISTS (SELECT * FROM Cart WHERE prodId=@ProductId)
 			BEGIN
 				ROLLBACK TRANSACTION		
 				RAISERROR('Cannot delete this product as it is currently in a cart. Transaction cancelled.',16,1)
@@ -19,7 +19,7 @@ BEGIN TRANSACTION
 				ROLLBACK TRANSACTION	
 				RAISERROR('Cannot delete this product as it is currently in one or more orders. Transaction cancelled.',16,1)
 				RETURN
-			END*/
+			END
 	
 		DECLARE @ImageId INT
 			
