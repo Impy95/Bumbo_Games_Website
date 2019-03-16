@@ -19,6 +19,7 @@ namespace BumboGames
             if (!IsPostBack)
             {
                 string categoryId = Request.QueryString["categoryId"];
+                string searchKeyword = Request.QueryString["word1"];
                 if (!string.IsNullOrEmpty(categoryId))
                 {
                     int category = 0;
@@ -36,6 +37,10 @@ namespace BumboGames
                         this.lblMessage.Text = "No such category";
                     }
                 }
+                else if (Request.QueryString["word1"] != null)
+                {
+                    LoadProductsGridViewByKeyword(searchKeyword);
+                }
                 else
                 {
                     LoadProductsGridView();
@@ -43,6 +48,33 @@ namespace BumboGames
 
             }
         }
+
+        private void LoadProductsGridViewByKeyword(string searchKeyword)
+        {
+            List<SqlParameter> prms = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                ParameterName = "@Keyword",
+                SqlDbType = SqlDbType.NVarChar,
+                Value = searchKeyword
+                }
+            };
+            DBHelper.DataBindingWithPaging(this.grdProducts, "SelectProductMaintenance", prms.ToArray());
+            //test if the table exists
+            if (grdProducts.Rows.Count != 0)
+            {
+                //Load the dropdown list in the create row
+                DropDownList ddlCategoriesInFooter = (DropDownList)(this.grdProducts.FooterRow.FindControl("ddlCategoriesNew"));
+                BindCategoryDropdownList(ddlCategoriesInFooter);
+            }
+            else
+            {
+                lblError.Text = "No products found for this category";
+            }
+
+        }
+
         private SqlParameter CategoryParamHelper(int categoryId)
         {
             return new SqlParameter()
@@ -64,6 +96,10 @@ namespace BumboGames
             {
                 DropDownList ddlCategoriesInFooter = (DropDownList)(this.grdProducts.FooterRow.FindControl("ddlCategoriesNew"));
                 BindCategoryDropdownList(ddlCategoriesInFooter);
+            }
+            else
+            {
+                lblError.Text = "No products found for this category";
             }
         }
         private void LoadProductsGridView()
@@ -250,5 +286,9 @@ namespace BumboGames
             }
         }
 
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"~/admin/ProductMaintenance.aspx?word1=" + txtMaintenanceSearch.Text);
+        }
     }
 }

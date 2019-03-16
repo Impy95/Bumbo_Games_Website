@@ -1,12 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="ProductMaintenance.aspx.cs" Inherits="BumboGames.ProductMaintenance" %>
 
 <%@ Register Src="~/ucCategoryListMaintenance.ascx" TagPrefix="uc1" TagName="ucCategoryListMaintenance" %>
+<%@ Register Src="~/admin/ucAdminNav.ascx" TagPrefix="uc1" TagName="ucAdminNav" %>
 
+<asp:Content ID="Content4" ContentPlaceHolderID="navigation" runat="server">
+    <uc1:ucAdminNav runat="server" id="ucAdminNav" />
+</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
     <uc1:ucCategoryListMaintenance runat="server" id="ucCategoryListMaintenance" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
-
+    <asp:TextBox ID="txtMaintenanceSearch" runat="server"></asp:TextBox>
+    <asp:Button runat="server" Text="Search" id="btnSearch" OnClick="btnSearch_Click" ></asp:Button>
      <div style="padding-bottom: 20px;">
         <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
         <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="Green"></asp:Label>
