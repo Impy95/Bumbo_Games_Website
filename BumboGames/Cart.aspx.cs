@@ -50,14 +50,30 @@ namespace BumboGames
                     TextBox txt = (TextBox)row.FindControl("txtQty");
                     HiddenField hdn = (HiddenField)row.FindControl("hdnCurrentQty");
                     CheckBox chkRemove = (CheckBox)row.FindControl("chkRemove");
-
+                    
                     int qty = chkRemove.Checked ? 0 : Convert.ToInt32(txt.Text.Trim());
                     int currentQty = Convert.ToInt32(hdn.Value);
                     int productId = Convert.ToInt32(this.grdCart.DataKeys[row.RowIndex].Value);
 
                     //Save us a round trip
                     if (currentQty != qty)
+                    {
                         UpdateCartItem(CartUId, productId, qty);
+                    }
+                    //get the cart quantity for the icon
+                    List<SqlParameter> prms = new List<SqlParameter>()
+                    {
+                        new SqlParameter
+                        {
+                            ParameterName="@CartUId",
+                            SqlDbType = SqlDbType.VarChar,
+                            Size = 50,
+                            Value = CartUId
+
+                        }
+                    };
+                    int cartQuantity = DBHelper.GetScalarValue<int>("GetCartSize",prms.ToArray());
+                    Session["cartSize"] = cartQuantity;
                 }
             }
 

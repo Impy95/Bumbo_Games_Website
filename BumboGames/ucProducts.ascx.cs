@@ -196,6 +196,7 @@ namespace BumboGames
                     if (Int32.TryParse(e.CommandArgument.ToString(), out productId))
                     {
                         AddToCart(productId);
+                        
                     }
                     else
                     {
@@ -241,6 +242,15 @@ namespace BumboGames
             });
 
             DBHelper.NonQuery("AddToCart", prms.ToArray());
+
+            if (Session["cartSize"] != null)
+            {
+                Session["cartSize"] = (int)Session["cartSize"] + 1;
+            }
+            else
+            {
+                Session["cartSize"] = 1;
+            }
 
             Response.Redirect("~/Cart.aspx");
         }

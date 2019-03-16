@@ -81,6 +81,7 @@
     <Content Include="ManageCategories.aspx" />
     <Content Include="admin\ProductMaintenance.aspx" />
     <Content Include="Products.aspx" />
+    <Content Include="resources\cart.png" />
     <Content Include="styles\styles.css" />
     <Content Include="admin\ucAdminNav.ascx" />
     <Content Include="ucCategoryList.ascx" />

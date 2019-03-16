@@ -11,7 +11,14 @@ namespace BumboGames
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["cartSize"]!= null)
+            {
+                lblCartSize.Text = Session["cartSize"].ToString();
+            }
+            else
+            {
+                lblCartSize.Text = "";
+            }
         }
     }
 }

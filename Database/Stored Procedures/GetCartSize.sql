@@ -1,0 +1,9 @@
+USE bumbogames
+GO
+CREATE OR ALTER PROCEDURE GetCartSize(@CartUId VARCHAR(50))
+AS
+BEGIN
+SELECT SUM(qty) 
+FROM CART 
+WHERE cartUId = @CartUId
+END

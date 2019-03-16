@@ -17,6 +17,13 @@
                 <a class="nav-link" href="#">Cart</a>
             </li>
             <uc1:ucProductSearch runat="server" ID="ucProductSearch" />
+            <li>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </li>
+            <li>
+                <asp:HyperLink ID="Cart" ImageUrl="~/resources/cart.png" NavigateUrl="~/Cart.aspx" runat="server">HyperLink</asp:HyperLink>
+                <asp:Label ID="lblCartSize" runat="server" Text="" ForeColor="Red"></asp:Label>
+            </li>
         </ul>
     </div>
 </nav>
