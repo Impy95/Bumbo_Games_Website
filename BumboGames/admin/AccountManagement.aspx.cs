@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
+//TODO: Add Admin Account later editing because im so tired rn
 namespace BumboGames.admin
 {
     public partial class AccountManagement : AdminPage
@@ -28,7 +30,7 @@ namespace BumboGames.admin
             LoadAccountsGridView();
         }
 
-        protected void btnUpdate_onClick(Object sender, EventArgs e)
+        protected void btnArchive_onclick(Object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             //Fetch the row the button exists in
