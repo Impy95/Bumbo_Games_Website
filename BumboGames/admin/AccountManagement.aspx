@@ -122,8 +122,8 @@
                 <EditItemTemplate>
                     <asp:Button ID="btnUpdate" runat="server" CommandName="Update"
                             Text="Update" />
-                    <asp:Button ID="btnCancel" runat="server" CommandName="C"
-                            Text="Update" />
+                    &nbsp;<asp:Button ID="btnCancel" runat="server" CausesValidation="False"
+                                CommandName="Cancel" Text="Cancel" />
                 </EditItemTemplate>
                 </asp:TemplateField>
             </Columns>
