@@ -5,16 +5,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
             <li class="nav-item active px-4">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <asp:HyperLink CssClass="nav-link" ID="lnkHome" NavigateUrl="~/Default.aspx" Text="Home" runat="server" />
             </li>
             <li class="nav-item active px-4">
-                <a class="nav-link" href="#">Top Products</a>
+                <asp:HyperLink CssClass="nav-link" ID="lnkCreate" NavigateUrl="~/CreateAccount.aspx" Text="Sign Up" runat="server"/>
             </li>
             <li class="nav-item active px-4">
-                <a class="nav-link" href="#">Sign In</a>
-            </li>
-            <li class="nav-item active px-4">
-                <a class="nav-link" href="#">Cart</a>
+                <asp:HyperLink CssClass="nav-link" ID="lnkLogin" NavigateUrl="~/Login.aspx" Text="Log In" runat="server"/>
             </li>
             <uc1:ucProductSearch runat="server" ID="ucProductSearch" />
             <li>
