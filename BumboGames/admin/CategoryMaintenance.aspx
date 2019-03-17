@@ -23,7 +23,7 @@
         <Columns>
                 <asp:TemplateField HeaderText="Id">
                     <ItemTemplate>
-                        <asp:Label ID="lblProductId" runat="server" Text='<%# Eval("id") %>'></asp:Label>
+                        <asp:Label ID="lblCategoryId" runat="server" Text='<%# Eval("id") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Category Name">

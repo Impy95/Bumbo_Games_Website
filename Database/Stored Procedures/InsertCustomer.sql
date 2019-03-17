@@ -3,19 +3,22 @@ GO
 CREATE OR ALTER PROCEDURE InsertCustomer
 @Email NVARCHAR(50),
 @Username NVARCHAR(50),
-@FirstName NVARCHAR(20),
-@LastName NVARCHAR(30),
+@FirstName NVARCHAR(50),
+@MiddleName NVARCHAR(50) = NULL,
+@LastName NVARCHAR(50),
 @Pwd NVARCHAR(15),
+@Birthday DATE,
 @Street NVARCHAR(50),
 @City NVARCHAR(20),
 @Province NVARCHAR(2),
+@Country NVARCHAR(30),
 @Pcode NVARCHAR(6),
 @Phone NVARCHAR(10),
 @Identity INT OUTPUT
 AS
 BEGIN
-	INSERT INTO Customers (lastname, firstname, street, city, province, postalcode, phone, email,username, [password])
-	VALUES (@lastname, @firstname, @street, @city, @province, @pcode, @phone, @email, @username, @pwd)
+	INSERT INTO Customers (lastname,middleName,firstname, birthday, street, city, province,country, postalcode, phone, email,username, [password])
+	VALUES (@lastname,@MiddleName, @firstname,@Birthday, @street, @city, @province,@Country, @pcode, @phone, @email, @username, @pwd)
 
 	SET @Identity = @@IDENTITY
 END

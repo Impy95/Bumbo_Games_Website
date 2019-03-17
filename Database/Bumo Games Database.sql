@@ -36,13 +36,17 @@ id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 userName NVARCHAR(50) NOT NULL,
 email NVARCHAR(50) NOT NULL,
 firstName NVARCHAR(50) NOT NULL,
+middleName NVARCHAR(50) NULL,
 lastName NVARCHAR(50) NOT NULL,
 password NVARCHAR(15) NOT NULL,
+birthday DATE NOT NULL,
 street NVARCHAR(50) NOT NULL,
 city NVARCHAR(20) NOT NULL,
 province NVARCHAR(2) NOT NULL,
+country NVARCHAR(30) NOT NULL,
 postalCode NVARCHAR(6) NOT NULL,
-phone NVARCHAR(10) NOT NULL
+phone NVARCHAR(10) NOT NULL,
+archived BIT NOT NULL DEFAULT 0
 )
 
 CREATE TABLE SiteImages(
@@ -134,22 +138,74 @@ EXEC	[dbo].[insertProduct]
 		@AltText = N'image',
 		@Id = @Id OUTPUT
 		GO
-		GO
 
 DECLARE	@return_value int,
 		@Identity int
 
 EXEC	@return_value = [dbo].[InsertCustomer]
-		@Email = N'hossboss@gmail.com',
-		@Username = N'hossboss5',
-		@FirstName = N'Hoss',
-		@LastName = N'Boss',
+		@Email = N'epicpaulie@gmail.com',
+		@Username = N'paulieP',
+		@FirstName = N'Paulie',
+		@MiddleName = NULL,
+		@LastName = N'Peterson',
 		@Pwd = N'password',
-		@Street = N'123 Hosstreet',
-		@City = N'this city',
-		@Province = N'NB',
-		@Pcode = N'123ABC',
+		@Birthday = '1996-12-12',
+		@Street = N'1 Eclaire Road',
+		@City = N'Terry Town',
+		@Province = N'HR',
+		@Country = 'New Zealand',
+		@Pcode = N'111111',
 		@Phone = N'1231231234',
+		@Identity = @Identity OUTPUT
+
+SELECT	@Identity as N'@Identity'
+
+SELECT	'Return Value' = @return_value
+
+GO
+
+DECLARE	@return_value int,
+		@Identity int
+
+EXEC	@return_value = [dbo].[InsertCustomer]
+		@Email = N'ouch@gmail.com',
+		@Username = N'chadStrider64',
+		@FirstName = N'Chad',
+		@MiddleName = NULL,
+		@LastName = N'JustChad',
+		@Pwd = N'password',
+		@Birthday = '1964-12-12',
+		@Street = N'46 Boomer Street',
+		@City = N'Boomer Ville',
+		@Province = N'BM',
+		@Country = 'Boomer',
+		@Pcode = N'111BMR',
+		@Phone = N'4444444444',
+		@Identity = @Identity OUTPUT
+
+SELECT	@Identity as N'@Identity'
+
+SELECT	'Return Value' = @return_value
+
+GO
+
+DECLARE	@return_value int,
+		@Identity int
+
+EXEC	@return_value = [dbo].[InsertCustomer]
+		@Email = N'smillie@gmail.com',
+		@Username = N'b1gst1nk',
+		@FirstName = N'Smillie',
+		@MiddleName = N'Von',
+		@LastName = N'Smillerton',
+		@Pwd = N'password',
+		@Birthday = '1900-01-01',
+		@Street = N'123 stinkstreet',
+		@City = N'City stinky haha',
+		@Province = N'ST',
+		@Country = 'Garbage',
+		@Pcode = N'S1N3k',
+		@Phone = N'1800Stinky',
 		@Identity = @Identity OUTPUT
 
 SELECT	@Identity as N'@Identity'
