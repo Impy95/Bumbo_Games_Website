@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucProducts.ascx.cs" Inherits="BumboGames.ucProducts" %>
-<asp:Label ID="lblHeading" EnableViewState="false" runat="server" Text="" CssClass="content-heading large"></asp:Label>
 
+
+<asp:Label ID="lblHeading" EnableViewState="false" runat="server" Text="" CssClass="content-heading large"></asp:Label>
+<br /><br />
 <asp:Repeater ID="rptProducts" runat="server" OnItemCommand="rptProducts_ItemCommand">
     <ItemTemplate>
         <div class="flexcontainer">
