@@ -1,8 +1,30 @@
 ﻿body {
+    color: black;
+    font-weight: 600;
+    background-image: url("../images/background4.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bgimg1 {
+    /**
+    background-image: url("../images/background3.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    */
 }
 
 .center {
     text-align: center;
+}
+
+.userArea {
+    background-color: white;
+    width: 70%;
+    margin: auto;
 }
 
 .genremargin {
@@ -15,4 +37,6 @@ label {
     margin-right: 30px;
     text-align: right;
 }
+
+
 

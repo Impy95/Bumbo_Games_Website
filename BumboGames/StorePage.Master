@@ -5,10 +5,6 @@
 <%@ Register Src="~/ucProductSearch.ascx" TagPrefix="uc1" TagName="ucProductSearch" %>
 <%@ Register Src="~/ucCategoryList.ascx" TagPrefix="uc1" TagName="ucCategoryList" %>
 
-
-
-
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28,20 +24,30 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            
-            <asp:ContentPlaceHolder ID ="navigation" runat="server">
-                 <uc1:ucNavigation runat="server" ID="ucNavigation" />
-            </asp:ContentPlaceHolder>
-            
-            <asp:ContentPlaceHolder ID ="categorySideBar" runat="server">
-                <uc1:ucCategoryList runat="server" ID="ucCategoryList" />
-            </asp:ContentPlaceHolder>
-            <asp:ContentPlaceHolder ID="phrContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <uc1:ucFooter runat="server" ID="ucFooter" />
-        </div>
-    </form>
+    <div class="bgimg1">
+        <form id="form1" runat="server">
+            <div>
+                <div class="userArea">
+                    <asp:ContentPlaceHolder ID="navigation" runat="server">
+                        <uc1:ucNavigation runat="server" ID="ucNavigation" />
+                    </asp:ContentPlaceHolder>
+
+                    <div class="row">
+                        <div class="col-md-2 genremargin">
+                            <asp:ContentPlaceHolder ID="categorySideBar" runat="server">
+                                <uc1:ucCategoryList runat="server" ID="ucCategoryList" />
+                            </asp:ContentPlaceHolder>
+                        </div>
+                        <div class="col-md-8">
+                            <asp:ContentPlaceHolder ID="phrContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+
+                    <uc1:ucFooter runat="server" ID="ucFooter" />
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

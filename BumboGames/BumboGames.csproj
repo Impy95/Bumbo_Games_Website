@@ -78,6 +78,11 @@
     <Content Include="CreateProducts.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DisplayProductInformation.aspx" />
+    <Content Include="images\61IbwbtiwzL._SL1000_.jpg" />
+    <Content Include="images\background4.png" />
+    <Content Include="images\crab.jpg" />
+    <Content Include="images\Dz7g9cGWsAEQcu8.jpg" />
+    <Content Include="images\piakcu.png" />
     <Content Include="Login.aspx" />
     <Content Include="ManageCategories.aspx" />
     <Content Include="admin\ProductMaintenance.aspx" />
@@ -272,9 +277,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

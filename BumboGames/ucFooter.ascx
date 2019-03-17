@@ -2,26 +2,26 @@
 <div>
     <div class="row">
         <div class="col-md-2 center">
-            <h5>About Us</h5>
+            <h4>About Us</h4>
             <p>Placeholder Text</p>
         </div>
         <div class="col-md-4 center">
-            <h5>Locations</h5>
+            <h4>Locations</h4>
             <p>Placeholder Text</p>
         </div>
         <div class="col-md-4 center">
-            <h5>Contact us</h5>
+            <h4>Contact us</h4>
             <p>Placeholder Text</p>
         </div>
         <div class="col-md-2 center">
-            <h5>Help</h5>
+            <h4>Help</h4>
             <p>Placeholder Text</p>
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-md-12 center">
-            <p>Copyright stuff</p>
+            <h4>Copyright stuff</h4>
         </div>
     </div>
 </div>
