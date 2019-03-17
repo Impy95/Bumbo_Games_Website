@@ -24,26 +24,30 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="navigation" runat="server">
-                <uc1:ucNavigation runat="server" ID="ucNavigation" />
-            </asp:ContentPlaceHolder>
+    <div class="bgimg1">
+        <form id="form1" runat="server">
+            <div>
+                <div class="userArea">
+                    <asp:ContentPlaceHolder ID="navigation" runat="server">
+                        <uc1:ucNavigation runat="server" ID="ucNavigation" />
+                    </asp:ContentPlaceHolder>
 
-            <div class="row">
-                <div class="col-md-2 genremargin">
-                    <asp:ContentPlaceHolder ID="categorySideBar" runat="server">
-                        <uc1:ucCategoryList runat="server" ID="ucCategoryList" />
-                    </asp:ContentPlaceHolder>
-                </div>
-                <div class="col-md-8">
-                    <asp:ContentPlaceHolder ID="phrContent" runat="server">
-                    </asp:ContentPlaceHolder>
+                    <div class="row">
+                        <div class="col-md-2 genremargin">
+                            <asp:ContentPlaceHolder ID="categorySideBar" runat="server">
+                                <uc1:ucCategoryList runat="server" ID="ucCategoryList" />
+                            </asp:ContentPlaceHolder>
+                        </div>
+                        <div class="col-md-8">
+                            <asp:ContentPlaceHolder ID="phrContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+
+                    <uc1:ucFooter runat="server" ID="ucFooter" />
                 </div>
             </div>
-
-            <uc1:ucFooter runat="server" ID="ucFooter" />
-        </div>
-    </form>
+        </form>
+    </div>
 </body>
 </html>
