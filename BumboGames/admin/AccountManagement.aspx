@@ -17,7 +17,7 @@
             PageSize="5"
             ShowFooter="False"
             AllowSorting="true"  OnPageIndexChanging="grdAccounts_PageIndexChanging" OnRowCancelingEdit="grdAccounts_RowCancelingEdit" 
-        OnRowEditing="grdAccounts_RowEditing" OnRowUpdating="grdAccounts_RowUpdating" >
+        OnRowEditing="grdAccounts_RowEditing" OnRowUpdating="grdAccounts_RowUpdating" CssClass="table table-responsive table-striped" >
         <Columns>
             <asp:TemplateField HeaderText="Id">
                 <ItemTemplate>
