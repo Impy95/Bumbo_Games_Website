@@ -13,19 +13,11 @@
     <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="Green"></asp:Label>
     <asp:GridView ID="grdAccounts" runat="server" AutoGenerateColumns="False"
         DataKeyNames="userName"
-<<<<<<< HEAD
             AllowPaging="True"
             PageSize="5"
             ShowFooter="False"
             AllowSorting="true"  OnPageIndexChanging="grdAccounts_PageIndexChanging" OnRowCancelingEdit="grdAccounts_RowCancelingEdit" 
         OnRowEditing="grdAccounts_RowEditing" OnRowUpdating="grdAccounts_RowUpdating" >
-=======
-        AllowPaging="True"
-        PageSize="5"
-        ShowFooter="False"
-        AllowSorting="true" OnPageIndexChanging="grdAccounts_PageIndexChanging"
-        CssClass="table table-responsive table-striped">
->>>>>>> 5e8f0952daac5f925b430e3cb491734ab79ff9ad
         <Columns>
             <asp:TemplateField HeaderText="Id">
                 <ItemTemplate>
