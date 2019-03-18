@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="CategoryMaintenance.aspx.cs" Inherits="BumboGames.admin.CategoryMaintenance" %>
 
 <%@ Register Src="~/admin/ucAdminNav.ascx" TagPrefix="uc1" TagName="ucAdminNav" %>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="navigation" runat="server">
     <uc1:ucAdminNav runat="server" id="ucAdminNav" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="phrContent" runat="server">
+    <br />
      <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
         <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="Green"></asp:Label>
     <asp:GridView ID="grdCategories" runat="server" AutoGenerateColumns="False"
@@ -65,4 +65,5 @@
                 </asp:TemplateField>
             </Columns>
     </asp:GridView>
+    <br />
 </asp:Content>

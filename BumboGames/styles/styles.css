@@ -27,6 +27,18 @@
     margin: auto;
 }
 
+.adminArea {
+    width: 100% !important;
+}
+
+.gridView {
+    table-layout: fixed;
+}
+
+.gridCol {
+    word-wrap: break-word;
+}
+
 .genremargin {
     margin-left: 4.6em;
 }

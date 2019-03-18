@@ -1,25 +1,74 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateCategories.aspx.cs" Inherits="BumboGames.CreateCategories" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/StorePage.Master" CodeBehind="CreateCategories.aspx.cs" Inherits="BumboGames.CreateCategories" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Manage Product Information</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link href="styles/styles.css" rel="stylesheet" />
-
-    <!--Font Awesome-->
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-</head>
-<body>
+<asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
+</asp:Content>
+<asp:Content ID="CategoryForm" ContentPlaceHolderID="phrContent" runat="server">
+    <div class="col-md-8">
+        <h3 class="center">New Genre</h3>
+        <br />
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Genre Name</label>
+                </div>
+                <div class="col-md-5">
+                    <asp:TextBox ID="txtGenreName" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-md-3">
+                    <asp:RequiredFieldValidator ID="reqGenreName"
+                        runat="server"
+                        ErrorMessage="Genre name is required"
+                        ControlToValidate="txtGenreName"
+                        CssClass="cursor"
+                        ForeColor="Red"
+                        ToolTip="Genre name is required"
+                        ValidationGroup="validateGenre">*</asp:RequiredFieldValidator>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Genre Description</label>
+                </div>
+                <div class="col-md-5">
+                    <asp:TextBox ID="txtGenreDesc" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-md-3">
+                    <asp:RequiredFieldValidator ID="reqGenreDesc"
+                        runat="server"
+                        ErrorMessage="Genre description is required"
+                        ControlToValidate="txtGenreDesc"
+                        CssClass="cursor"
+                        ForeColor="Red"
+                        ToolTip="Genre Description is required"
+                        ValidationGroup="validateGenre">*</asp:RequiredFieldValidator>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGenre" ForeColor="Red" />
+                </div>
+                </div>
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-5">
+                    <asp:LinkButton ID="lbtnCreate"
+                        runat="server"
+                        CssClass="btn btn-dark"
+                        ValidationGroup="validateGenre" OnClick="lbtnCreate_Click"
+                        Width="97px">Create</asp:LinkButton>
+                </div>
+                <div class="col-md-3">
+                    <asp:Label ID="lblGenreSummary" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+</asp:Content>
+<%--<body>
     <form id="form1" runat="server">
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item active px-4">
@@ -65,6 +114,7 @@
                 </div>
             </nav>
             <br />
+
             <div>
                 <div class="row">
                     <div class="col-md-2 genremargin">
@@ -127,7 +177,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGenre" ForeColor="Red"/>
+                                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGenre" ForeColor="Red" />
                                 </div>
                                 <div class="col-md-3">
                                     <asp:LinkButton ID="lbtnCreate"
@@ -139,7 +189,7 @@
                                 <div class="col-md-3">
                                     <asp:Label ID="lblGenreSummary" runat="server" Text=""></asp:Label>
                                 </div>
-                            </div>                   
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,6 +224,7 @@
         </div>
     </form>
 </body>
-</html>
+</html>--%>
+
 
 

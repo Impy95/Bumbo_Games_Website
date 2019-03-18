@@ -3,7 +3,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
             <li class="nav-item active px-3">
-                <a class="nav-link" href="ProductMaintenance.aspx">ProductMaintenance</span></a>
+                <a class="nav-link" href="ProductMaintenance.aspx">ProductMaintenance</a>
             </li>
             <li class="nav-item active px-3">
                 <a class="nav-link" href="OrderMaintenance.aspx">Order Maintenance</a>
@@ -15,7 +15,7 @@
                 <a class="nav-link" href="ImageApproval.aspx">Image Approval</a>
             </li>
             <li class="nav-item active px-3">
-                <a class="nav-link" href="ImageApproval.aspx">Image Approval</a>
+                <a class="nav-link" href="AccountManagement.aspx">Account Management</a>
             </li>
             <li class="nav-item active px-3">
                 <a class="nav-link" href="Logout.aspx">Logout</a>
