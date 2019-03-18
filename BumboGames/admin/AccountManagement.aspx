@@ -15,7 +15,8 @@
             AllowPaging="True"
             PageSize="5"
             ShowFooter="False"
-            AllowSorting="true"  OnPageIndexChanging="grdAccounts_PageIndexChanging" >
+            AllowSorting="true"  OnPageIndexChanging="grdAccounts_PageIndexChanging" OnRowCancelingEdit="grdAccounts_RowCancelingEdit" 
+        OnRowEditing="grdAccounts_RowEditing" OnRowUpdating="grdAccounts_RowUpdating" >
         <Columns>
                 <asp:TemplateField HeaderText="Id">
                     <ItemTemplate>
