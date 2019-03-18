@@ -27,6 +27,28 @@
     margin: auto;
 }
 
+.adminArea {
+    background-color: white;
+    width: 95% !important;
+    margin: auto;
+}
+
+.accountGrid {
+    margin-left: 25%;
+}
+
+.productMargin {
+    margin-left: 10px;
+}
+
+.gridView {
+    table-layout: fixed;
+}
+
+.gridCol {
+    word-wrap: break-word;
+}
+
 .genremargin {
     margin-left: 4.6em;
 }

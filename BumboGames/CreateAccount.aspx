@@ -23,7 +23,6 @@
         <div class="col-md-3">
             <asp:Label ID="lblMiddleName" runat="server" Text="Middle Name"></asp:Label>
         </div>
-        
         <div class="col-md-4">
             <asp:TextBox ID="txtMiddleName" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
@@ -127,7 +126,7 @@
     <br />
     <div class="row">
         <div class="col-md-2">
-            <asp:Button runat="server" ID="btnCreateAccount" Text="Create" OnClick="btnCreateAccount_Click" CssClass="btn-dark" />
+            <asp:Button runat="server" ID="btnCreateAccount" Text="Create" OnClick="btnCreateAccount_Click" CssClass="btn-dark form-control" />
             <asp:Button runat="server" ID="btnUpdateAccount" Text="Update" OnClick="btnUpdateAccount_Click" Visible="False" CssClass="btn-dark" />
         </div>
     </div> 

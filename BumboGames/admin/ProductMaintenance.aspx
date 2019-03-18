@@ -2,17 +2,19 @@
 
 <%@ Register Src="~/ucCategoryListMaintenance.ascx" TagPrefix="uc1" TagName="ucCategoryListMaintenance" %>
 <%@ Register Src="~/admin/ucAdminNav.ascx" TagPrefix="uc1" TagName="ucAdminNav" %>
-
 <asp:Content ID="Content4" ContentPlaceHolderID="navigation" runat="server">
-    <uc1:ucAdminNav runat="server" id="ucAdminNav" />
+    <uc1:ucAdminNav runat="server" ID="ucAdminNav" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
-    <uc1:ucCategoryListMaintenance runat="server" id="ucCategoryListMaintenance" />
+    <br />
+    <uc1:ucCategoryListMaintenance runat="server" ID="ucCategoryListMaintenance" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
+    <br />
     <asp:TextBox ID="txtMaintenanceSearch" runat="server"></asp:TextBox>
-    <asp:Button runat="server" Text="Search" id="btnSearch" OnClick="btnSearch_Click" ></asp:Button>
-     <div style="padding-bottom: 20px;">
+    <asp:Button runat="server" Text="Search" ID="btnSearch" OnClick="btnSearch_Click"></asp:Button>
+    <br />
+    <div style="padding-bottom: 20px;">
         <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
         <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="Green"></asp:Label>
         <asp:GridView ID="grdProducts" runat="server" AutoGenerateColumns="False"
@@ -27,7 +29,8 @@
             PageSize="5"
             ShowFooter="True"
             AllowSorting="true"
-            >
+            Width="100%"
+            CssClass="table table-responsive table-striped">
             <FooterStyle BackColor="#3399ff" />
             <Columns>
                 <asp:TemplateField HeaderText="Id">
@@ -142,5 +145,6 @@
 
         </asp:GridView>
     </div>
-
+    <br />
 </asp:Content>
+
