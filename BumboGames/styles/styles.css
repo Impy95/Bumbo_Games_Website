@@ -28,7 +28,17 @@
 }
 
 .adminArea {
-    width: 100% !important;
+    background-color: white;
+    width: 95% !important;
+    margin: auto;
+}
+
+.accountGrid {
+    margin-left: 25%;
+}
+
+.productMargin {
+    margin-left: 10px;
 }
 
 .gridView {
