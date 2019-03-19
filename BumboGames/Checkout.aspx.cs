@@ -32,8 +32,24 @@ namespace BumboGames
                 btnSubmitOrder.Visible = true;
                 LoadUserDetails();
                 Common.GetCart(this.grdCart, Request, Response);
-                this.lblCartTotal.Text = Common.GetCartTotal(Request, Response).ToString("c2");
+                decimal total = Common.GetCartTotal(Request, Response) ;
+                total += total * (decimal)0.15;
+                this.lblCartTotal.Text = total.ToString("c2");
             }
+            
+
+            if (chkSameAddress.Checked)
+            {
+                detUser.Visible = true;
+                tblShipping.Visible = false;
+            }
+            else
+            {
+                detUser.Visible = false;
+                tblShipping.Visible = true;
+                
+            }
+
         }
 
         private void LoadUserDetails()
@@ -107,11 +123,32 @@ namespace BumboGames
                 }});
 
             string cartUId = Common.GetCartId(Request, Response);
-
             prms.Add(new SqlParameter() { ParameterName = "@CustomerId", SqlDbType = SqlDbType.Int, Value = customerId });
             prms.Add(new SqlParameter() { ParameterName = "@OrderDate", SqlDbType = SqlDbType.Date, Value = orderDate });
             prms.Add(new SqlParameter() { ParameterName = "@CartUId", SqlDbType = SqlDbType.VarChar, Size = 50, Value = cartUId });
             prms.Add(new SqlParameter() { ParameterName = "@OrderNo", SqlDbType = SqlDbType.Int, Direction = ParameterDirection.Output });
+
+
+
+            if (!chkSameAddress.Checked)
+            {
+                TextBox txtaddress = (TextBox)tblShipping.Rows[0].Cells[0].FindControl("txtShipppingStreet");
+                TextBox txtCity = (TextBox)tblShipping.Rows[1].Cells[0].FindControl("txtShippingCity");
+                TextBox txtProvince = (TextBox)tblShipping.Rows[2].Cells[0].FindControl("txtShippingProvince");
+
+                TextBox txtPostalCode = (TextBox)tblShipping.Rows[3].Cells[0].FindControl("txtShippingPostalCode");
+                prms.Add(new SqlParameter() { ParameterName = "@ShippingStreet", SqlDbType = SqlDbType.NVarChar, Size = 255, Value = txtaddress.Text });
+                prms.Add(new SqlParameter() { ParameterName = "@ShippingCity", SqlDbType = SqlDbType.NVarChar, Size = 255, Value = txtCity.Text });
+                prms.Add(new SqlParameter() { ParameterName = "@ShippingProvince", SqlDbType = SqlDbType.NVarChar, Size = 255, Value = txtProvince.Text });
+                prms.Add(new SqlParameter() { ParameterName = "@ShippingPostalCode", SqlDbType = SqlDbType.NVarChar, Size = 255, Value = txtPostalCode.Text });
+            }
+            else
+            {
+                prms.Add(new SqlParameter() { ParameterName = "@ShippingStreet", SqlDbType = SqlDbType.NVarChar, Size = 255, Value = detUser.Rows[2].Cells[1].Text.ToString() });
+                prms.Add(new SqlParameter() { ParameterName = "@ShippingCity", SqlDbType = SqlDbType.NVarChar, Size = 255, Value = detUser.Rows[3].Cells[1].Text.ToString() });
+                prms.Add(new SqlParameter() { ParameterName = "@ShippingProvince", SqlDbType = SqlDbType.NVarChar, Size = 255, Value = detUser.Rows[4].Cells[1].Text.ToString() });
+                prms.Add(new SqlParameter() { ParameterName = "@ShippingPostalCode", SqlDbType = SqlDbType.NVarChar, Size = 255, Value = detUser.Rows[5].Cells[1].Text.ToString() });
+            }
 
             int orderNo = DBHelper.Insert<int>("InsertOrder", "@OrderNo", prms.ToArray());
 
@@ -186,7 +223,7 @@ namespace BumboGames
             }
 
             sb.Append("</table>");
-            sb.Append($"Order Total: {orderTotal.ToString("c2") }");
+            sb.Append($"Order Total: {(orderTotal * 0.15).ToString("c2") }");
             return sb.ToString();
         }
     }

@@ -29,7 +29,46 @@
     </asp:DetailsView>
     <asp:Label ID="lblUpdateAccountPrompt" runat="server">
         Not correct? You can update your account info </asp:Label>
-    <asp:HyperLink Text="here" ID="hypCreateAccount" NavigateUrl="~/CreateAccount.aspx" runat="server" />
+    <asp:HyperLink Text="here" ID="hypCreateAccount" NavigateUrl="~/CreateAccount.aspx" runat="server" /><br />
+    <asp:CheckBox id="chkSameAddress" AutoPostBack="true" Checked="true" Text="Billing address same as shipping address" runat="server" />
+
+    <asp:Table id ="tblShipping" runat="server" Height="50px" Width="483px" AutoGenerateRows="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+        
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label Text ="Street:" runat="server" ></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="txtShipppingStreet" runat="server" ></asp:TextBox>
+                    </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label Text ="City:" runat="server" ></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="txtShippingCity" runat="server" ></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label Text ="Province:" runat="server" ></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="txtShippingProvince" runat="server" ></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label Text ="PostalCode:" runat="server" ></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="txtShippingPostalCode" runat="server" ></asp:TextBox>
+                    </asp:TableCell>
+                </asp:TableRow>
+    </asp:Table>
+
+    
     <h5 class="candy-border" style="text-align:center;" runat="server" id="order">Order Details</h5>
     <!--Order Total-->
     <asp:GridView ID="grdCart" runat="server" 

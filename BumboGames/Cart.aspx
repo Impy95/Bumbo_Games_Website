@@ -31,6 +31,7 @@
     </asp:GridView>
     <div style="text-align:center">
         <asp:Label ID="lblTotal" runat="server" Text="Total:" EnableViewState="false"></asp:Label> <asp:Label ID="lblCartTotal" runat="server" Text="" Font-Bold="true" EnableViewState="false"></asp:Label>
+        <asp:Label ID="lblTax" runat="server" Text="+ Tax:" EnableViewState="false"></asp:Label> <asp:Label ID="lblCartTax" runat="server" Text="" Font-Bold="true" EnableViewState="false"></asp:Label>
     </div>
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Group1"/>
     <asp:Button ID="btnUpdateCart" 

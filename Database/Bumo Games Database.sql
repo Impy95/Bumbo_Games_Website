@@ -65,6 +65,10 @@ CREATE TABLE Orders(
 orderNumber INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 customerId INT NOT NULL,
 orderDate DATE NOT NULL,
+shippingStreet NVARCHAR(255) NOT NULL,
+shippingCity NVARCHAR(255) NOT NULL,
+shippingProvince NVARCHAR(255) NOT NULL,
+shippingPostalCode NVARCHAR(255) NOT NULL,
 totalAmount MONEY NOT NULL
 )
 CREATE TABLE OrderDetails(

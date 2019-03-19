@@ -36,8 +36,16 @@ namespace BumboGames
         }
         private void GetCartTotal()
         {
-            this.lblCartTotal.Text = Common.GetCartTotal(Request, Response).ToString("c2");
+
+            decimal total = Common.GetCartTotal(Request, Response);
+            decimal tax = total * (decimal)0.15;
+
+
+
+            this.lblCartTotal.Text = total.ToString("c2");
+            this.lblCartTax.Text = tax.ToString("c2");
         }
+
         protected void btnUpdateCart_Click(object sender, EventArgs e)
         {
             string CartUId = Common.GetCartId(Request, Response);
