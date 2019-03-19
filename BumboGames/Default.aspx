@@ -4,5 +4,5 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
     <br />
-    <uc1:ucProducts runat="server" ID="ucProducts" Featured="false" />
+    <uc1:ucProducts runat="server" ID="ucProducts" Featured="true" />
 </asp:Content>

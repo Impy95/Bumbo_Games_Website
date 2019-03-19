@@ -34,6 +34,7 @@ namespace BumboGames
             if (IsValid)
             {
                 string firstName = this.txtFirstName.Text.Trim();
+                string middleName = this.txtMiddleName.Text.Trim();
                 string lastName = this.txtLastName.Text.Trim();
                 string username = this.txtUsername.Text.Trim();
                 string emailAddress = this.txtEmail.Text.Trim();
@@ -47,6 +48,7 @@ namespace BumboGames
 
                 if (insertAccount(
                     firstName,
+                    middleName,
                     lastName,
                     username,
                     emailAddress,
@@ -57,15 +59,14 @@ namespace BumboGames
                     postalCode,
                     phone) != 0)
                 {
-                    //TODO:: Impliment Login Sessions
 
                     Session["authenticated"] = true;
                     Session["authenticatedUser"] = emailAddress;
 
-                    //if (Request.QueryString["returnurl"] != null)
-                    //    Response.Redirect($"~/{Request.QueryString["returnurl"]}");
-                    //else
-                    //    Response.Redirect("~/MyAccount.aspx?created");
+                    if (Request.QueryString["returnurl"] != null)
+                        Response.Redirect($"~/{Request.QueryString["returnurl"]}");
+                    else
+                        Response.Redirect("~/Default.aspx");
                 }
                 else
                 {
@@ -76,6 +77,7 @@ namespace BumboGames
 
         private int insertAccount(
         string firstName,
+        string middleName,
         string lastName,
         string userName,
         string emailAddress,
@@ -97,6 +99,13 @@ namespace BumboGames
                     SqlDbType = SqlDbType.NVarChar,
                     Size = 20,
                     Value = firstName
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@MiddleName",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Size = 20,
+                    Value=middleName
                 },
                 new SqlParameter()
                 {
@@ -160,6 +169,13 @@ namespace BumboGames
                     SqlDbType = SqlDbType.NVarChar,
                     Size = 50,
                     Value= userName
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@Country",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Size = 50,
+                    Value= "Canada"
                 },
                 new SqlParameter()
                 {

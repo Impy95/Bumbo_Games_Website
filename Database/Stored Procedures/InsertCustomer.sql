@@ -7,7 +7,7 @@ CREATE OR ALTER PROCEDURE InsertCustomer
 @MiddleName NVARCHAR(50) = NULL,
 @LastName NVARCHAR(50),
 @Pwd NVARCHAR(15),
-@Birthday DATE,
+@Birthday DATE = NULL,
 @Street NVARCHAR(50),
 @City NVARCHAR(20),
 @Province NVARCHAR(2),

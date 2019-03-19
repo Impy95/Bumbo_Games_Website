@@ -59,6 +59,10 @@ label {
     margin-right: 30px;
     text-align: right;
 }
+.headlabel{
+    font-weight:bold;
+    font-size:50px;
+}
 
 
 

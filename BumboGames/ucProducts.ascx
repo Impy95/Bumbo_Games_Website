@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucProducts.ascx.cs" Inherits="BumboGames.ucProducts" %>
 
 
-<asp:Label ID="lblHeading" EnableViewState="false" runat="server" Text="" CssClass="content-heading large"></asp:Label>
+<asp:Label ID="lblHeading" EnableViewState="false" runat="server" Text="" style="font-weight:bold;font-size:50px;" ></asp:Label>
 <br /><br />
 <asp:Repeater ID="rptProducts" runat="server" OnItemCommand="rptProducts_ItemCommand">
     <ItemTemplate>
@@ -19,7 +19,7 @@
                 if (string.IsNullOrEmpty(productId))
                 {%>
             <div class="flex-cols">
-                <a href='Default.aspx?id=<%# Eval("id") %>'><%# Eval("id") %></a>
+                <a href='Products.aspx?id=<%# Eval("id") %>'><%# Eval("id") %></a>
             </div>
             <%}%>
             <div class="flex-cols">

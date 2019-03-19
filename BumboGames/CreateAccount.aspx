@@ -301,7 +301,7 @@
             <asp:Button runat="server" ID="btnCreateAccount" Text="Create" OnClick="btnCreateAccount_Click" CssClass="btn-dark form-control"
                 ValidationGroup="validateAccount" />
             <asp:Button runat="server" ID="btnUpdateAccount" Text="Update" OnClick="btnUpdateAccount_Click" Visible="False" CssClass="btn-dark"
-                ValidationGroup="validateAccount" />
+                 />
         </div>
     </div>
     <br />

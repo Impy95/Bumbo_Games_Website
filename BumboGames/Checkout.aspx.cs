@@ -25,6 +25,7 @@ namespace BumboGames
                 order.Visible = false;
                 lblUpdateAccountPrompt.Visible = false;
                 hypCreateAccount.Visible = false;
+                chkSameAddress.Visible = false;
             }
             else
             {
