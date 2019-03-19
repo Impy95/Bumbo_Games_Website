@@ -19,6 +19,19 @@ namespace BumboGames
             {
                 lblCartSize.Text = "";
             }
+
+            if (Session["authenticated"] != null)
+            {
+                lnkCreate.Text = Session["authenticatedUser"].ToString();;
+                lnkLogin.Text = "Log Out";
+                lnkLogin.NavigateUrl = "~/LoggedOut.aspx";
+            }
+            else
+            {
+                lnkCreate.Text = "Sign Up";
+                lnkLogin.Text = "Log In";
+                lnkLogin.NavigateUrl = "~/Login.aspx";
+            }
         }
     }
 }

@@ -143,6 +143,7 @@ namespace BumboGames
 
                     conn.Open();
 
+                    
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.HasRows)
@@ -154,7 +155,6 @@ namespace BumboGames
                     }
                 }
             }
-
             return dt;
         }
 

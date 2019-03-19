@@ -328,22 +328,22 @@ namespace BumboGames {
         protected global::System.Web.UI.WebControls.TextBox txtPhone1;
         
         /// <summary>
-        /// txtPhone2 control.
+        /// reqPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhone2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPhone;
         
         /// <summary>
-        /// txtPhone3 control.
+        /// regPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhone3;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regPhone;
         
         /// <summary>
         /// lblEmail control.

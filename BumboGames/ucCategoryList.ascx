@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucCategoryList.ascx.cs" Inherits="BumboGames.ucCategoryList" %>
+<br />
 <h5>Game Genres</h5>
 <asp:DataList ID="dtvCategories" runat="server">
     <ItemTemplate>

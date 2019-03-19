@@ -3,5 +3,6 @@
 <%@ Register Src="~/ucProducts.ascx" TagPrefix="uc1" TagName="ucProducts" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
+    <br />
     <uc1:ucProducts runat="server" ID="ucProducts" Featured="false" />
 </asp:Content>
