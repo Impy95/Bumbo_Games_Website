@@ -82,7 +82,8 @@
     <Content Include="images\background4.png" />
     <Content Include="images\crab.jpg" />
     <Content Include="images\Dz7g9cGWsAEQcu8.jpg" />
-    <Content Include="images\piakcu.png" />
+    <Content Include="images\image.png" />
+    <Content Include="LoggedOut.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="ManageCategories.aspx" />
     <Content Include="admin\ProductMaintenance.aspx" />
@@ -173,6 +174,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedOut.aspx.cs">
+      <DependentUpon>LoggedOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoggedOut.aspx.designer.cs">
+      <DependentUpon>LoggedOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

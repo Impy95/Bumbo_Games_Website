@@ -22,18 +22,15 @@ namespace BumboGames
 
             if (Session["authenticated"] != null)
             {
-                lnkCreate.Text = "Update Account";
+                lnkCreate.Text = Session["authenticatedUser"].ToString();;
                 lnkLogin.Text = "Log Out";
-                lnkLogin.NavigateUrl = "~/Default.aspx";
-                lblUsername.Text = "You are logged in!!!";
-                lblUsername.Visible = true;
+                lnkLogin.NavigateUrl = "~/LoggedOut.aspx";
             }
             else
             {
                 lnkCreate.Text = "Sign Up";
                 lnkLogin.Text = "Log In";
                 lnkLogin.NavigateUrl = "~/Login.aspx";
-                lblUsername.Visible = false;
             }
         }
     }

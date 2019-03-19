@@ -18,7 +18,7 @@
                 <a class="nav-link" href="AccountManagement.aspx">Account Management</a>
             </li>
             <li class="nav-item active px-3">
-                <a class="nav-link" href="Logout.aspx">Logout</a>
+                <a class="nav-link" href="../LoggedOut.aspx">Logout</a>
             </li>
         </ul>
     </div>
