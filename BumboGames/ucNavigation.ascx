@@ -13,6 +13,9 @@
             <li class="nav-item active px-4">
                 <asp:HyperLink CssClass="nav-link" ID="lnkLogin" NavigateUrl="~/Login.aspx" Text="Log In" runat="server"/>
             </li>
+            <li class="nav-item active px-4">
+                <asp:Label CssClass="nav-link" ID="lblUsername" Text="" runat="server" Visible="false"></asp:Label>
+            </li>
             <uc1:ucProductSearch runat="server" ID="ucProductSearch" />
             <li>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>

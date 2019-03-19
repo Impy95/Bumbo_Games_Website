@@ -42,7 +42,8 @@ namespace BumboGames
                 string city = this.txtCity.Text.Trim();
                 string province = this.txtProvince.Text.Trim();
                 string postalCode = this.txtPostalCode.Text.Trim();
-                string phone = this.txtPhone1.Text.Trim() + this.txtPhone2.Text.Trim() + this.txtPhone3.Text.Trim();
+                //string phone = this.txtPhone1.Text.Trim() + this.txtPhone2.Text.Trim() + this.txtPhone3.Text.Trim();
+                string phone = this.txtPhone1.Text.Trim();
 
                 if (insertAccount(
                     firstName,
@@ -199,9 +200,9 @@ namespace BumboGames
                 txtProvince.Text = customerItems.Rows[0]["province"].ToString();
                 txtPostalCode.Text = customerItems.Rows[0]["postalCode"].ToString();
                 string phone = customerItems.Rows[0]["phone"].ToString();
-                txtPhone1.Text = phone.Substring(0, 3);
-                txtPhone2.Text = phone.Substring(3, 3);
-                txtPhone3.Text = phone.Substring(6);
+                txtPhone1.Text = phone;
+                //txtPhone2.Text = phone.Substring(3, 3);
+                //txtPhone3.Text = phone.Substring(6);
             }
             catch (Exception e)
             {
@@ -230,7 +231,7 @@ namespace BumboGames
         protected void btnUpdateAccount_Click(object sender, EventArgs e)
         {
             //add an if admin
-            updateAccount(null, txtLastName.Text, txtEmail.Text, txtStreet.Text, txtCity.Text, txtProvince.Text, txtPostalCode.Text, txtPhone1.Text + txtPhone2.Text + txtPhone3.Text);
+            updateAccount(null, txtLastName.Text, txtEmail.Text, txtStreet.Text, txtCity.Text, txtProvince.Text, txtPostalCode.Text, txtPhone1.Text);
         }
 
         private void updateAccount(
