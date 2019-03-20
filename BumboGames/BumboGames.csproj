@@ -97,6 +97,7 @@
     <Content Include="ucNavigation.ascx" />
     <Content Include="ucProducts.ascx" />
     <Content Include="ucProductSearch.ascx" />
+    <Content Include="VerifyAccount.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -274,6 +275,13 @@
       <DependentUpon>ManageCategories.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VerifyAccount.aspx.cs">
+      <DependentUpon>VerifyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerifyAccount.aspx.designer.cs">
+      <DependentUpon>VerifyAccount.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -36,6 +36,24 @@ namespace BumboGames
         private bool AuthenticateUser(string userName, string password)
         {
             bool result = false;
+
+            bool verified = DBHelper.GetQueryValue<bool>("SelectCustomers", "verified", new SqlParameter[]{ new SqlParameter() {
+                    ParameterName = "@UserName",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Size = 50,
+                    Value = userName
+                }});
+            bool archived = DBHelper.GetQueryValue<bool>("SelectCustomers", "archived", new SqlParameter[]{ new SqlParameter() {
+                    ParameterName = "@UserName",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Size = 50,
+                    Value = userName
+                }});
+            if (!verified || archived)
+            {
+                return false;
+            }
+
             try
             {
                 List<SqlParameter> prms = new List<SqlParameter>();

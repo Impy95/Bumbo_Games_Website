@@ -161,7 +161,7 @@ namespace BumboGames
         {
             try
             {
-                string html = "<html><head><style>body{font-family:Arial; color:#000;} table, th, tr, td{ color:blue;border:1px solid #000;font-family:Arial; }</style></head><body>";
+                string html = "<html><head><style>body{font-family:Arial; color:#000;} </style></head><body>";
 
                 //create the mail message
                 MailMessage mail = new MailMessage();

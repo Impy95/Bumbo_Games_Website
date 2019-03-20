@@ -14,11 +14,13 @@ CREATE OR ALTER PROCEDURE InsertCustomer
 @Country NVARCHAR(30),
 @Pcode NVARCHAR(6),
 @Phone NVARCHAR(10),
+@Verified BIT = 0,
+@VerifyHash NVARCHAR(MAX) = NULL,
 @Identity INT OUTPUT
 AS
 BEGIN
-	INSERT INTO Customers (lastname,middleName,firstname, birthday, street, city, province,country, postalcode, phone, email,username, [password])
-	VALUES (@lastname,@MiddleName, @firstname,@Birthday, @street, @city, @province,@Country, @pcode, @phone, @email, @username, @pwd)
+	INSERT INTO Customers (lastname,middleName,firstname, birthday, street, city, province,country, postalcode, phone, email,username, [password],verified, verifiedHash)
+	VALUES (@lastname,@MiddleName, @firstname,@Birthday, @street, @city, @province,@Country, @pcode, @phone, @email, @username, @pwd,@Verified, @VerifyHash)
 
 	SET @Identity = @@IDENTITY
 END

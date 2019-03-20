@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -46,6 +49,7 @@ namespace BumboGames
                 string postalCode = this.txtPostalCode.Text.Trim();
                 //string phone = this.txtPhone1.Text.Trim() + this.txtPhone2.Text.Trim() + this.txtPhone3.Text.Trim();
                 string phone = this.txtPhone1.Text.Trim();
+                Guid guid = Guid.NewGuid();
 
                 if (insertAccount(
                     firstName,
@@ -59,7 +63,8 @@ namespace BumboGames
                     city,
                     province,
                     postalCode,
-                    phone) != 0)
+                    phone,
+                    guid.ToString()) != 0)
                 {
 
                     Session["authenticated"] = true;
@@ -89,7 +94,8 @@ namespace BumboGames
         string city,
         string province,
         string postalCode,
-        string phone
+        string phone,
+        string guid
     )
         {
             int id = 0;
@@ -189,6 +195,12 @@ namespace BumboGames
                 },
                 new SqlParameter()
                 {
+                    ParameterName = "@VerifyHash",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Value = guid
+                },
+                new SqlParameter()
+                {
                     ParameterName = "@Identity",
                     SqlDbType = SqlDbType.Int,
                     Direction=ParameterDirection.Output
@@ -196,7 +208,7 @@ namespace BumboGames
             };
 
             id = DBHelper.Insert<int>("InsertCustomer", "@Identity", prms.ToArray());
-
+            SendVerifycationEmail(guid, userName);
             return id;
 
         }
@@ -342,7 +354,48 @@ namespace BumboGames
 
             DBHelper.NonQuery("UpdateCustomer", prms.ToArray());
         }
-    }
-   
 
+        private void SendVerifycationEmail(string guid, string userName)
+        {
+            MailMessage mail = new MailMessage();
+            string html = "<html><head><style>body{font-family:Arial; color:#000;} </style></head><body>" + generateVerificationEmail(guid, userName) + "</body></html>";
+            string email = DBHelper.GetQueryValue<string>("SelectCustomers", "email", new SqlParameter[]{ new SqlParameter() {
+                    ParameterName = "@UserName",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Size = 50,
+                    Value = userName
+                }});
+            mail.IsBodyHtml = true;
+            mail.From = new MailAddress("noreply@bumbogames.com");
+            mail.To.Add(email);
+            mail.Subject = "Bumbo Games Account Verification";
+            mail.Body = html;
+
+
+            string emailLogDir = Server.MapPath("~/SentEmailLog");
+            DirectoryInfo dirInfo = new DirectoryInfo(emailLogDir);
+
+            if (!dirInfo.Exists)
+                Directory.CreateDirectory(emailLogDir);
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
+            smtp.PickupDirectoryLocation = emailLogDir;
+            smtp.Send(mail);
+        }
+
+        private string generateVerificationEmail(string guid, string fullName)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("<p>Hello " + fullName + "<br />");
+            sb.Append("Thank you for registering with Bumbo Games.<br />");
+            sb.Append("Your account is not ready for use, however.<br />");
+            sb.Append("Please click the following link to verify your email:");
+            sb.Append("<a href=http://" + HttpContext.Current.Request.Url.Authority + "/VerifyAccount.aspx?verifyHash=" + guid + ">Click Here</a>");
+            sb.Append("</p>");
+
+            return sb.ToString();
+        }
+        
     }
+}
