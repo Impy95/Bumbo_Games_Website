@@ -202,6 +202,42 @@ namespace BumboGames {
         protected global::System.Web.UI.WebControls.CompareValidator compConfirmPassword;
         
         /// <summary>
+        /// lblBirthday control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBirthday;
+        
+        /// <summary>
+        /// txtBirthday control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBirthday;
+        
+        /// <summary>
+        /// reqBirthday control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqBirthday;
+        
+        /// <summary>
+        /// regBirthday control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regBirthday;
+        
+        /// <summary>
         /// lblStreet control.
         /// </summary>
         /// <remarks>

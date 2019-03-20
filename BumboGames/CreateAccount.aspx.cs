@@ -39,6 +39,7 @@ namespace BumboGames
                 string username = this.txtUsername.Text.Trim();
                 string emailAddress = this.txtEmail.Text.Trim();
                 string password = this.txtPassword.Text.Trim();
+                string birthday = this.txtBirthday.Text.Trim();
                 string street = this.txtStreet.Text.Trim();
                 string city = this.txtCity.Text.Trim();
                 string province = this.txtProvince.Text.Trim();
@@ -53,6 +54,7 @@ namespace BumboGames
                     username,
                     emailAddress,
                     password,
+                    birthday,
                     street,
                     city,
                     province,
@@ -82,6 +84,7 @@ namespace BumboGames
         string userName,
         string emailAddress,
         string password,
+        string birthday,
         string street,
         string city,
         string province,
@@ -127,6 +130,13 @@ namespace BumboGames
                     SqlDbType = SqlDbType.NVarChar,
                     Size = 15,
                     Value = password
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@Birthday",
+                    SqlDbType = SqlDbType.Date,
+                    Size = 15,
+                    Value = birthday
                 },
                 new SqlParameter()
                 {
