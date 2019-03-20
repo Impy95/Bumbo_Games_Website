@@ -36,39 +36,93 @@
         
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label Text ="Street:" runat="server" ></asp:Label>
+                    <asp:Label Text ="Street" runat="server" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtShipppingStreet" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="txtShipppingStreet" runat="server" class="form-control"></asp:TextBox>
                     </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label Text ="City:" runat="server" ></asp:Label>
+                    <asp:Label Text ="City" runat="server" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtShippingCity" runat="server" ></asp:TextBox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label Text ="Province:" runat="server" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtShippingProvince" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="txtShippingCity" runat="server" class="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label Text ="PostalCode:" runat="server" ></asp:Label>
+                    <asp:Label Text ="Province" runat="server" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtShippingPostalCode" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="txtShippingProvince" runat="server" class="form-control"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label Text ="PostalCode" runat="server" ></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="txtShippingPostalCode" runat="server" class="form-control"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
     </asp:Table>
-
-    
+    <br />
+    <h4 class="candy-border center" runat="server" id="ccInfo">Credit Card Information</h4>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <asp:Label ID="lblCreditCardNumber" runat="server" Text="Credit Card Number"></asp:Label>
+        </div>
+        <div class="col-md-4">
+            <asp:TextBox ID="txtCreditCardNumber" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+        <div class="col-md-3">
+            <asp:RequiredFieldValidator ID="reqCreditCardNumber"
+                runat="server"
+                ErrorMessage="Credit Card Number is required"
+                ControlToValidate="txtCreditCardNumber"
+                CssClass="cursor"
+                ForeColor="Red"
+                ToolTip="Credit Card Number is required"
+                ValidationGroup="validateCC"
+                Display="Dynamic">
+                        <i class="fas fa-exclamation-triangle" style="color:red;"></i>
+            </asp:RequiredFieldValidator>
+        </div>      
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <asp:Label ID="lblCreditCardType" runat="server" Text="Credit Card Type"></asp:Label>
+        </div>
+        <div class="col-md-4">
+            <asp:DropDownList ID="ddlCreditCardType" runat="server" CssClass="form-control">
+                <asp:ListItem Text="MasterCard" Value="MasterCard"></asp:ListItem>
+                <asp:ListItem Text="Visa" Value="Visa"></asp:ListItem>
+                <asp:ListItem Text="American Express" Value="American Express"></asp:ListItem>
+            </asp:DropDownList>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <asp:Label ID="lblExpiryDate" runat="server" Text="Expiry Date"></asp:Label>
+        </div>
+        <div class="col-md-4">
+            <asp:TextBox ID="txtExpiryDate" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <asp:Label ID="lblCVV" runat="server" Text="CVV"></asp:Label>
+        </div>
+        <div class="col-md-4">
+            <asp:TextBox ID="txtCVV" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+    </div>
+    <br />
     <h5 class="candy-border" style="text-align:center;" runat="server" id="order">Order Details</h5>
     <!--Order Total-->
     <asp:GridView ID="grdCart" runat="server" 

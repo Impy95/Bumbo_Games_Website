@@ -26,6 +26,15 @@ namespace BumboGames
                 lblUpdateAccountPrompt.Visible = false;
                 hypCreateAccount.Visible = false;
                 chkSameAddress.Visible = false;
+                this.lblCreditCardNumber.Visible = false;
+                this.txtCreditCardNumber.Visible = false;
+                this.ccInfo.Visible = false;
+                this.lblCreditCardType.Visible = false;
+                this.ddlCreditCardType.Visible = false;
+                this.lblExpiryDate.Visible = false;
+                this.txtExpiryDate.Visible = false;
+                this.lblCVV.Visible = false;
+                this.txtCVV.Visible = false;
             }
             else
             {
