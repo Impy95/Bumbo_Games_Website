@@ -115,14 +115,14 @@ GO
 DECLARE @Id int, @Now datetime
 set @Now = GetDate()
 EXEC	[dbo].[insertProduct]
-		@ProductName = N'Warbut',
-		@ProductBriefDesc = N'but its war ',
-		@ProductFullDesc = N'but it is time for war and warbut',
+		@ProductName = N'Pokemon Crystal',
+		@ProductBriefDesc = N'Catch tiny creatures ',
+		@ProductFullDesc = N'Battle creatures against each other as you race to the pokemon league',
 		@Hidden = 0,
-		@ProductPrice = 12.50,
+		@ProductPrice = 19.99,
 		@Featured = 1,
-		@CategoryId = 1,
-		@ImageName = N'image.png',
+		@CategoryId = 2,
+		@ImageName = N'images/image.png',
 		@ImageUploadDate = @Now,
 		@AltText = N'image',
 		@Id = @Id OUTPUT
@@ -130,14 +130,44 @@ GO
 DECLARE @Id int, @Now datetime
 set @Now = GetDate()
 EXEC	[dbo].[insertProduct]
-		@ProductName = N'Warbut2',
-		@ProductBriefDesc = N'WOAH A NEW GAME  ',
+		@ProductName = N'Street Fighter 2',
+		@ProductBriefDesc = N'Fight in the streets',
 		@ProductFullDesc = N'THATS AMAZING',
 		@Hidden = 0,
-		@ProductPrice = 12.51,
+		@ProductPrice = 14.99,
 		@Featured = 1,
 		@CategoryId = 1,
-		@ImageName = N'image.png',
+		@ImageName = N'images/image.png',
+		@ImageUploadDate = @Now,
+		@AltText = N'image',
+		@Id = @Id OUTPUT
+		GO
+		DECLARE @Id int, @Now datetime
+		set @Now = GetDate()
+EXEC	[dbo].[insertProduct]
+		@ProductName = N'Earthbound',
+		@ProductBriefDesc = N'Go on an aventure and defeat Giygas',
+		@ProductFullDesc = N'Join Ness, a psychic boy who can defeat the alien, Giygas.',
+		@Hidden = 0,
+		@ProductPrice = 899.99,
+		@Featured = 0,
+		@CategoryId = 2,
+		@ImageName = N'images/image.png',
+		@ImageUploadDate = @Now,
+		@AltText = N'image',
+		@Id = @Id OUTPUT
+		GO
+		DECLARE @Id int, @Now datetime
+		set @Now = GetDate()
+EXEC	[dbo].[insertProduct]
+		@ProductName = N'The Legend of Zelda',
+		@ProductBriefDesc = N'Save Zelda from Ganon',
+		@ProductFullDesc = N'Ganon has stolen the triforce and sealed away Princess Zelda. Save her!',
+		@Hidden = 0,
+		@ProductPrice = 14.99,
+		@Featured = 1,
+		@CategoryId = 3,
+		@ImageName = N'images/image.png',
 		@ImageUploadDate = @Now,
 		@AltText = N'image',
 		@Id = @Id OUTPUT

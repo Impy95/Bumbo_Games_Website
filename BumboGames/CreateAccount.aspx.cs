@@ -61,7 +61,7 @@ namespace BumboGames
                 {
 
                     Session["authenticated"] = true;
-                    Session["authenticatedUser"] = emailAddress;
+                    Session["authenticatedUser"] = username;
 
                     if (Request.QueryString["returnurl"] != null)
                         Response.Redirect($"~/{Request.QueryString["returnurl"]}");

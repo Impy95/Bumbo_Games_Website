@@ -103,7 +103,7 @@ namespace BumboGames.admin
                 string phone = txtPhone.Text;
                 string email = txtEmail.Text;
 
-                List<SqlParameter> prms = new List<SqlParameter>() { 
+                List<SqlParameter> prms = new List<SqlParameter>() {
                 new SqlParameter
                 {
                     ParameterName = "@UserName",
@@ -164,6 +164,12 @@ namespace BumboGames.admin
                     SqlDbType= SqlDbType.NVarChar,
                     Value=phone
                 },
+                new SqlParameter
+                {
+                    ParameterName="@Archived",
+                    SqlDbType= SqlDbType.Bit,
+                    Value = false
+                }
             };
                 DBHelper.NonQuery("UpdateCustomer", prms.ToArray());
                 grdAccounts.EditIndex = -1;
