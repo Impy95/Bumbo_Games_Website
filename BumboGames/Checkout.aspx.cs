@@ -103,6 +103,7 @@ namespace BumboGames
 
                 this.btnSubmitOrder.Visible = false;
                 this.btnUpdateMyCart.Visible = false;
+                Session["cartSize"] = 0;
             }
             catch (Exception ex)
             {

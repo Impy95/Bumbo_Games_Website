@@ -91,7 +91,7 @@
             <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
         </div>
         <div class="col-md-4">
-            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="col-md-3">
             <asp:RequiredFieldValidator ID="reqPassword"
@@ -122,7 +122,7 @@
             <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm Password"></asp:Label>
         </div>
         <div class="col-md-4">
-            <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="col-md-3">
             <asp:RequiredFieldValidator ID="reqConfirmPassword"
