@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
      <div id="notLoggedIn" runat="server" visible="false">
-        You are not logged in. <a href="Login.aspx?returnurl=checkout.aspx">Login</a> or <a href="AccountCreation.aspx?returnurl=checkout.aspx">create a new account</a> to complete your order
+        You are not logged in. <a href="Login.aspx?returnurl=checkout.aspx">Login</a> or <a href="CreateAccount.aspx?returnurl=checkout.aspx">create a new account</a> to complete your order
     </div>
     <!-- Order Summary -->
     <!-- Get User Info -->

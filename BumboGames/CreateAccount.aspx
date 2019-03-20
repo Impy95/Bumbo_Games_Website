@@ -152,6 +152,36 @@
     <br />
     <div class="row">
         <div class="col-md-3">
+            <asp:Label ID="lblBirthday" runat="server" Text="Birthday"></asp:Label>
+        </div>
+        <div class="col-md-4">
+            <asp:TextBox ID="txtBirthday" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+        <div class="col-md-3">
+            <asp:RequiredFieldValidator ID="reqBirthday"
+                runat="server"
+                ErrorMessage="Birthday is required"
+                ControlToValidate="txtBirthday"
+                CssClass="cursor"
+                ForeColor="Red"
+                ToolTip="Birthday is required"
+                ValidationGroup="validateAccount">
+                <i class="fas fa-exclamation-triangle" style="color:red;"></i>
+            </asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="regBirthday" runat="server"
+                ErrorMessage="Birthday is not in valid format" ForeColor="Red"
+                ToolTip="Birthday is not in valid format"
+                ControlToValidate="txtBirthday"
+                ValidationExpression="((0?[13578]|10|12)(-|\/)((0[0-9])|([12])([0-9]?)|(3[01]?))(-|\/)((\d{4})|(\d{2}))|(0?[2469]|11)(-|\/)((0[0-9])|([12])([0-9]?)|(3[0]?))(-|\/)((\d{4}|\d{2})))"
+                ValidationGroup="validateAccount"
+                Display="Dynamic">
+                            <i class="fas fa-exclamation-circle" style="color:red;"></i>
+            </asp:RegularExpressionValidator>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
             <asp:Label ID="lblStreet" runat="server" Text="Street Address"></asp:Label>
         </div>
         <div class="col-md-4">
@@ -300,8 +330,7 @@
         <div class="col-md-2">
             <asp:Button runat="server" ID="btnCreateAccount" Text="Create" OnClick="btnCreateAccount_Click" CssClass="btn-dark form-control"
                 ValidationGroup="validateAccount" />
-            <asp:Button runat="server" ID="btnUpdateAccount" Text="Update" OnClick="btnUpdateAccount_Click" Visible="False" CssClass="btn-dark"
-                 />
+            <asp:Button runat="server" ID="btnUpdateAccount" Text="Update" OnClick="btnUpdateAccount_Click" Visible="False" CssClass="btn-dark" />
         </div>
     </div>
     <br />
