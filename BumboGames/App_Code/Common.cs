@@ -84,7 +84,6 @@ namespace BumboGames
 
             DBHelper.DataBinding(ctrl, "SelectCart", prms.ToArray());
         }
-
         public static decimal GetCartTotal(HttpRequest request, HttpResponse response)
         {
             string CartUId = Common.GetCartId(request, response);

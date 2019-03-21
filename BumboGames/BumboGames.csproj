@@ -70,6 +70,7 @@
     <Content Include="admin\AccountManagement.aspx" />
     <Content Include="admin\AdminDashboard.aspx" />
     <Content Include="admin\CategoryMaintenance.aspx" />
+    <Content Include="admin\ImageValidation.aspx" />
     <Content Include="admin\Login.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="admin\CategoryMaintenance.aspx.designer.cs">
       <DependentUpon>CategoryMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ImageValidation.aspx.cs">
+      <DependentUpon>ImageValidation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ImageValidation.aspx.designer.cs">
+      <DependentUpon>ImageValidation.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
