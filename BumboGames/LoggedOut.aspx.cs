@@ -13,6 +13,8 @@ namespace BumboGames
         {
             Session["authenticated"] = null;
             Session["authenticatedUser"] = null;
+            Session["admin"] = null;
+
         }
     }
 }

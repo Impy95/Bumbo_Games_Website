@@ -70,6 +70,7 @@
     <Content Include="admin\AccountManagement.aspx" />
     <Content Include="admin\AdminDashboard.aspx" />
     <Content Include="admin\CategoryMaintenance.aspx" />
+    <Content Include="admin\ImageValidation.aspx" />
     <Content Include="admin\Login.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
@@ -97,6 +98,7 @@
     <Content Include="ucNavigation.ascx" />
     <Content Include="ucProducts.ascx" />
     <Content Include="ucProductSearch.ascx" />
+    <Content Include="VerifyAccount.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +122,13 @@
     </Compile>
     <Compile Include="admin\CategoryMaintenance.aspx.designer.cs">
       <DependentUpon>CategoryMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ImageValidation.aspx.cs">
+      <DependentUpon>ImageValidation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ImageValidation.aspx.designer.cs">
+      <DependentUpon>ImageValidation.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -274,6 +283,13 @@
       <DependentUpon>ManageCategories.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VerifyAccount.aspx.cs">
+      <DependentUpon>VerifyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerifyAccount.aspx.designer.cs">
+      <DependentUpon>VerifyAccount.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

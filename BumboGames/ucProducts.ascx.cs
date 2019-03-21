@@ -176,6 +176,7 @@ namespace BumboGames
             });
 
             DBHelper.DataBinding(this.rptProducts, "SelectProducts", prms.ToArray());
+
         }
 
         //TODO:Implement Cart

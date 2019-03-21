@@ -21,6 +21,7 @@ namespace BumboGames
             return ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
         }
 
+
         /// <summary>
         /// Execute scalar query
         /// </summary>
