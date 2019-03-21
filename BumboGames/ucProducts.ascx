@@ -7,7 +7,6 @@
     <ItemTemplate>
         <div class="flexcontainer">
             <div class="flex-cols">
-                
                 <asp:Image
                     CssClass="productsinrepeater"
                     ID="Image1"

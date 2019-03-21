@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
@@ -92,27 +93,35 @@ namespace BumboGames
 
             try
             {
-                int orderNumber = SubmitOrder();
-                SendEmail(orderNumber);
-                lblMessage.Text = $"Your Bumbo games order has now been processed.<br />Order No: { orderNumber.ToString() }<br />An email has been sent as confirmation.";
+                DateTime expiryDate = DateTime.ParseExact(this.txtExpiryDate.Text, "MMyy", CultureInfo.InvariantCulture);
+                if (expiryDate > DateTime.Now)
+                {
+                    int orderNumber = SubmitOrder();
+                    SendEmail(orderNumber);
+                    lblMessage.Text = $"Your Bumbo games order has now been processed.<br />Order No: { orderNumber.ToString() }<br />An email has been sent as confirmation.";
 
-                //Remove the cart cookies from the user's system
-                Response.Cookies["CartUId"].Expires = DateTime.Now.AddDays(-1);
+                    //Remove the cart cookies from the user's system
+                    Response.Cookies["CartUId"].Expires = DateTime.Now.AddDays(-1);
 
-                //Clear MasterPage Label
-                Label lblCartItemsCount = (Label)this.Page.Master.FindControl("lblCartItemsCount");
+                    //Clear MasterPage Label
+                    Label lblCartItemsCount = (Label)this.Page.Master.FindControl("lblCartItemsCount");
 
-                if (lblCartItemsCount != null)
-                    lblCartItemsCount.Text = "";
+                    if (lblCartItemsCount != null)
+                        lblCartItemsCount.Text = "";
 
-                this.lblTotal.Text = "";
+                    this.lblTotal.Text = "";
 
-                this.grdCart.DataSource = null;
-                this.grdCart.DataBind();
+                    this.grdCart.DataSource = null;
+                    this.grdCart.DataBind();
 
-                this.btnSubmitOrder.Visible = false;
-                this.btnUpdateMyCart.Visible = false;
-                Session["cartSize"] = 0;
+                    this.btnSubmitOrder.Visible = false;
+                    this.btnUpdateMyCart.Visible = false;
+                    Session["cartSize"] = 0;
+                }
+                else
+                {
+                    lblError.Text = "Expiry Date is not valid";
+                }              
             }
             catch (Exception ex)
             {

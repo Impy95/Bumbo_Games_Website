@@ -148,6 +148,15 @@ namespace BumboGames {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqCreditCardNumber;
         
         /// <summary>
+        /// regCreditCardNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regCreditCardNumber;
+        
+        /// <summary>
         /// lblCreditCardType control.
         /// </summary>
         /// <remarks>
@@ -184,6 +193,24 @@ namespace BumboGames {
         protected global::System.Web.UI.WebControls.TextBox txtExpiryDate;
         
         /// <summary>
+        /// reqExpiry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqExpiry;
+        
+        /// <summary>
+        /// regExpiry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regExpiry;
+        
+        /// <summary>
         /// lblCVV control.
         /// </summary>
         /// <remarks>
@@ -200,6 +227,24 @@ namespace BumboGames {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCVV;
+        
+        /// <summary>
+        /// reqCVV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqCVV;
+        
+        /// <summary>
+        /// regCVV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regCVV;
         
         /// <summary>
         /// order control.
