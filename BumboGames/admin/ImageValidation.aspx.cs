@@ -18,7 +18,7 @@ namespace BumboGames.admin
         }
         private void LoadImagesGridView()
         {
-            DBHelper.DataBindingWithPaging(this.grdImages, "SelectProductMaintenance");
+            DBHelper.DataBindingWithPaging(this.grdImages, "SelectImageMaintenance");
 
         }
 
@@ -29,9 +29,28 @@ namespace BumboGames.admin
 
         protected void grdImages_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Image image = (Image)grdImages.Rows[e.RowIndex].FindControl("imgProduct");
-            string file = image.ImageUrl;
-            File.Delete(file);
+            try
+            {
+                Label id = (Label)grdImages.Rows[e.RowIndex].FindControl("lblProductId");
+                List<SqlParameter> prms = new List<SqlParameter>
+            {
+                new SqlParameter
+                {
+                    ParameterName = "@ProductId",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = id.Text
+                }
+            };
+                DBHelper.NonQuery("DeleteProduct", prms.ToArray());
+                Image image = (Image)grdImages.Rows[e.RowIndex].FindControl("imgProduct");
+                //string file = image.ImageUrl;
+                //File.Delete(file);
+            }
+            catch(Exception ex)
+            {
+                lblError.Text = ex.Message;
+            }
+            LoadImagesGridView();
 
         }
         protected void validateImage(object sender, EventArgs e)
@@ -39,19 +58,18 @@ namespace BumboGames.admin
             Button btn = (Button)sender;
             //Fetch the row the button exists in
             GridViewRow row = (GridViewRow)btn.NamingContainer;
-            Image image = (Image)row.FindControl("imgProduct");
+            Label id = (Label)row.FindControl("lblProductId");
             List<SqlParameter> prms = new List<SqlParameter>()
             {
                new SqlParameter
                {
-                   ParameterName="@ImageName",
-                   Size=50,
-                   SqlDbType=System.Data.SqlDbType.NVarChar,
-                   Value = image.ImageUrl
+                   ParameterName="@ProductId",
+                   SqlDbType=System.Data.SqlDbType.Int,
+                   Value = id.Text
                }
             };
             DBHelper.NonQuery("ValidateImage", prms.ToArray());
-
+            LoadImagesGridView();
         }
     }
 }
