@@ -7,13 +7,12 @@
     <ItemTemplate>
         <div class="flexcontainer">
             <div class="flex-cols">
-                
                 <asp:Image
                     CssClass="productsinrepeater"
                     ID="Image1"
                     runat="server"
                     AlternateText='<%# Eval("altText") %>'
-                    ImageUrl='<%# (Boolean.Parse(Eval("validated").ToString())==true) ? Eval("ImageName") : "images/image.png" %> ' />
+                    ImageUrl='<%# (Boolean.Parse(Eval("validatedImage").ToString())==true) ? Eval("ImageName") : "images/image.png" %> ' />
             </div>
             <%
                 string productId = Request.QueryString["id"];

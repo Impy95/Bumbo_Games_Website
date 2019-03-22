@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="ImageValidation.aspx.cs" Inherits="BumboGames.admin.ImageValidation" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" EnableEventValidation ="false" CodeBehind="ImageValidation.aspx.cs" Inherits="BumboGames.admin.ImageValidation" %>
 <asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="phrContent" runat="server">
@@ -34,8 +34,8 @@
                 </asp:TemplateField>
                 <asp:TemplateField ShowHeader="False">
                     <ItemTemplate>
-                        <asp:Button ID="btnValidate" runat="server" onClick="validateImage" Text="Approve" />&nbsp;<asp:Button ID="btnDelete" runat="server" CausesValidation="False"
-                                CommandName="Delete" Text="Delete" />
+                        <asp:Button ID="btnValidate" runat="server" onClick="validateImage" Text="Validate Image" />&nbsp;<asp:Button ID="btnDelete" runat="server" CausesValidation="False"
+                                CommandName="Delete" Text="Delete Associated Product" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

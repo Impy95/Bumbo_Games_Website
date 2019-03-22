@@ -36,39 +36,146 @@
         
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label Text ="Street:" runat="server" ></asp:Label>
+                    <asp:Label Text ="Street" runat="server" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtShipppingStreet" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="txtShipppingStreet" runat="server" class="form-control"></asp:TextBox>
                     </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label Text ="City:" runat="server" ></asp:Label>
+                    <asp:Label Text ="City" runat="server" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtShippingCity" runat="server" ></asp:TextBox>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label Text ="Province:" runat="server" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:TextBox ID="txtShippingProvince" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="txtShippingCity" runat="server" class="form-control"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label Text ="PostalCode:" runat="server" ></asp:Label>
+                    <asp:Label Text ="Province" runat="server" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtShippingPostalCode" runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="txtShippingProvince" runat="server" class="form-control"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label Text ="PostalCode" runat="server" ></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="txtShippingPostalCode" runat="server" class="form-control"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
     </asp:Table>
-
-    
+    <br />
+    <h4 class="candy-border center" runat="server" id="ccInfo">Credit Card Information</h4>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <asp:Label ID="lblCreditCardNumber" runat="server" Text="Credit Card Number"></asp:Label>
+        </div>
+        <div class="col-md-4">
+            <asp:TextBox ID="txtCreditCardNumber" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+        <div class="col-md-3">
+            <asp:RequiredFieldValidator ID="reqCreditCardNumber"
+                runat="server"
+                ErrorMessage="Credit Card Number is required"
+                ControlToValidate="txtCreditCardNumber"
+                CssClass="cursor"
+                ForeColor="Red"
+                ToolTip="Credit Card Number is required"
+                ValidationGroup="validateCC"
+                Display="Dynamic">
+                        <i class="fas fa-exclamation-triangle" style="color:red;"></i>
+            </asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="regCreditCardNumber" runat="server"
+                ErrorMessage="Credit Card Number is not in valid format" ForeColor="Red"
+                ToolTip="Credit Card Number is not in valid format"
+                ControlToValidate="txtCreditCardNumber"
+                ValidationExpression="\b\d{4}(| |-)\d{4}\1\d{4}\1\d{4}\b"
+                ValidationGroup="validateCC"
+                Display="Dynamic">
+                            <i class="fas fa-exclamation-circle" style="color:red;"></i>
+            </asp:RegularExpressionValidator>
+        </div>      
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <asp:Label ID="lblCreditCardType" runat="server" Text="Credit Card Type"></asp:Label>
+        </div>
+        <div class="col-md-4">
+            <asp:DropDownList ID="ddlCreditCardType" runat="server" CssClass="form-control">
+                <asp:ListItem Text="MasterCard" Value="MasterCard"></asp:ListItem>
+                <asp:ListItem Text="Visa" Value="Visa"></asp:ListItem>
+                <asp:ListItem Text="American Express" Value="American Express"></asp:ListItem>
+            </asp:DropDownList>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <asp:Label ID="lblExpiryDate" runat="server" Text="Expiry Date"></asp:Label>
+        </div>
+        <div class="col-md-4">
+            <asp:TextBox ID="txtExpiryDate" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+        <div class="col-md-3">
+            <asp:RequiredFieldValidator ID="reqExpiry"
+                runat="server"
+                ErrorMessage="Expiry Date is required"
+                ControlToValidate="txtExpiryDate"
+                CssClass="cursor"
+                ForeColor="Red"
+                ToolTip="Expiry Date is required"
+                ValidationGroup="validateCC"
+                Display="Dynamic">
+                        <i class="fas fa-exclamation-triangle" style="color:red;"></i>
+            </asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="regExpiry" runat="server"
+                ErrorMessage="Expiry Date is not in valid format" ForeColor="Red"
+                ToolTip="Expiry Date is not in valid format"
+                ControlToValidate="txtExpiryDate"
+                ValidationExpression="^(0[1-9]|1[0-2])[0-9][0-9]$"
+                ValidationGroup="validateCC"
+                Display="Dynamic">
+                            <i class="fas fa-exclamation-circle" style="color:red;"></i>
+            </asp:RegularExpressionValidator>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <asp:Label ID="lblCVV" runat="server" Text="CVV"></asp:Label>
+        </div>
+        <div class="col-md-4">
+            <asp:TextBox ID="txtCVV" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+        <div class="col-md-3">
+            <asp:RequiredFieldValidator ID="reqCVV"
+                runat="server"
+                ErrorMessage="CVV is required"
+                ControlToValidate="txtCVV"
+                CssClass="cursor"
+                ForeColor="Red"
+                ToolTip="CVV is required"
+                ValidationGroup="validateCC"
+                Display="Dynamic">
+                        <i class="fas fa-exclamation-triangle" style="color:red;"></i>
+            </asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="regCVV" runat="server"
+                ErrorMessage="CVV is not in valid format" ForeColor="Red"
+                ToolTip="CVV is not in valid format"
+                ControlToValidate="txtCVV"
+                ValidationExpression="\D?(\d{3})\D?"
+                ValidationGroup="validateCC"
+                Display="Dynamic">
+                            <i class="fas fa-exclamation-circle" style="color:red;"></i>
+            </asp:RegularExpressionValidator>
+        </div>
+    </div>
+    <br />
     <h5 class="candy-border" style="text-align:center;" runat="server" id="order">Order Details</h5>
     <!--Order Total-->
     <asp:GridView ID="grdCart" runat="server" 
@@ -86,7 +193,7 @@
         <asp:Label ID="lblTotal" runat="server" Text="Total:" EnableViewState="false"></asp:Label> <asp:Label ID="lblCartTotal" runat="server" Text="" Font-Bold="true" EnableViewState="false"></asp:Label>
         <asp:Label ID="lblMessage" runat="server" Text="" EnableViewState="false"></asp:Label>
      </div>
-    <asp:Button ID="btnSubmitOrder" runat="server" Text="Confirm Order" OnClick="btnSubmitOrder_Click" CssClass="crs" /> 
+    <asp:Button ID="btnSubmitOrder" runat="server" Text="Confirm Order" OnClick="btnSubmitOrder_Click" CssClass="crs" ValidationGroup="validateCC" /> 
     <asp:Button ID="btnUpdateMyCart" runat="server" Text="Make changes to my order" OnClick="btnUpdateMyCart_Click" CssClass="crs" /> 
     <asp:Button ID="btnContinueShopping" runat="server" Text="Continue Shopping" Width="151px" OnClick="btnContinueShopping_Click" CssClass="crs" />
 </asp:Content>

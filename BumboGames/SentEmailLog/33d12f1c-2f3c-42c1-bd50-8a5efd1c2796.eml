@@ -1,0 +1,16 @@
+X-Sender: noreply@bumbogames.com
+X-Receiver: test@test.com
+MIME-Version: 1.0
+From: noreply@bumbogames.com
+To: test@test.com
+Date: 21 Mar 2019 19:52:41 -0300
+Subject: Bumbo Games Account Verification
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><style>body{font-family:Arial; color:#000;} </style><=
+/head><body><p>Hello ta734<br />Thank you for registering with Bu=
+mbo Games.<br />Your account is not ready for use, however.<br />=
+Please click the following link to verify your email:<a href=3Dht=
+tp://localhost:49869/VerifyAccount.aspx?verifyHash=3D52d61cb0-b81=
+d-4b8f-a405-5fd765435e3c>Click Here</a></p></body></html>
