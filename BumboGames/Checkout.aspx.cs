@@ -10,7 +10,10 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/** Author: Greg VanKampen and Vaughn Rowse
+ * Date:3-22-2019
+ * File: Checkout.cs
+ **/
 namespace BumboGames
 {
     public partial class Checkout : System.Web.UI.Page
@@ -62,7 +65,9 @@ namespace BumboGames
             }
 
         }
-
+        /// <summary>
+        /// loads the customers detail view
+        /// </summary>
         private void LoadUserDetails()
         {
             string user = Common.GetAuthenticatedUser(Session);
@@ -76,17 +81,29 @@ namespace BumboGames
 
             DBHelper.DataBinding(this.detUser, "SelectCustomers", new SqlParameter[] { userPrm });
         }
-
+        /// <summary>
+        /// redirects to home page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnContinueShopping_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Default.aspx");
         }
-
+        /// <summary>
+        /// redirects to cart
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnUpdateMyCart_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Cart.aspx");
         }
-
+        /// <summary>
+        /// validates and submits the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnSubmitOrder_Click(object sender, EventArgs e)
         {
             lblError.Text = "";
@@ -128,7 +145,10 @@ namespace BumboGames
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Submits the order to the databsae
+        /// </summary>
+        /// <returns></returns>
         private int SubmitOrder()
         {
             List<SqlParameter> prms = new List<SqlParameter>();
@@ -174,7 +194,10 @@ namespace BumboGames
 
             return orderNo;
         }
-
+        /// <summary>
+        /// sends a receipt email to the customer
+        /// </summary>
+        /// <param name="orderNumber"></param>
         private void SendEmail(int orderNumber)
         {
             try
@@ -217,7 +240,11 @@ namespace BumboGames
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Build the string contents of the receipt
+        /// </summary>
+        /// <param name="orderNumber"></param>
+        /// <returns></returns>
         private string BuildEmailOrderTable(int orderNumber)
         {
             StringBuilder sb = new StringBuilder();

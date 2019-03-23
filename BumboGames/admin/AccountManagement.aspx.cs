@@ -8,7 +8,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
+/** Author: Greg VanKampen and Vaughn Rowse
+ * Date:3-22-2019
+ * File: AccountManagement.cs
+ **/
 
 namespace BumboGames.admin
 {
@@ -22,17 +25,28 @@ namespace BumboGames.admin
                 LoadAccountsGridView();
             }
         }
+        /// <summary>
+        /// rebinds the grid
+        /// </summary>
         private void LoadAccountsGridView()
         {
             DBHelper.DataBindingWithPaging(this.grdAccounts, "SelectCustomers");
         }
-
+        /// <summary>
+        /// Updates grid current index
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdAccounts_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grdAccounts.PageIndex = e.NewPageIndex;
             LoadAccountsGridView();
         }
-
+        /// <summary>
+        /// Sets current account to be achived
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnArchive_onclick(Object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -68,13 +82,21 @@ namespace BumboGames.admin
             }
 
         }
-
+        /// <summary>
+        /// sets current row into edit mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdAccounts_RowEditing(object sender, GridViewEditEventArgs e)
         {
             grdAccounts.EditIndex = e.NewEditIndex;
             LoadAccountsGridView();
         }
-
+        /// <summary>
+        /// Updates current row with new entries
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdAccounts_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             try
@@ -181,7 +203,11 @@ namespace BumboGames.admin
             }
         }
 
-
+        /// <summary>
+        /// Cancels edit mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdAccounts_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             grdAccounts.EditIndex = -1;

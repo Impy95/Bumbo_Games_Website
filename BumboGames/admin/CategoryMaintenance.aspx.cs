@@ -6,7 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/** Author: Greg VanKampen and Vaughn Rowse
+ * Date:3-22-2019
+ * File: CategoryMaintenance.cs
+ **/
 namespace BumboGames.admin
 {
     public partial class CategoryMaintenance : App_Code.AdminPage
@@ -22,10 +25,18 @@ namespace BumboGames.admin
 
             }
         }
+        /// <summary>
+        /// Rebinds category grid
+        /// </summary>
         private void LoadCategoryGridView()
         {
             DBHelper.DataBindingWithPaging(this.grdCategories, "SelectCategoryMaintenance");
         }
+        /// <summary>
+        /// Creates a new account with footer files
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdCategories_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "btnNew")
@@ -37,6 +48,11 @@ namespace BumboGames.admin
             }
         }
 
+        /// <summary>
+        /// Calls the insert category procedure
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddNewCategory()
         {
 
@@ -82,6 +98,11 @@ namespace BumboGames.admin
             }
         }
 
+        /// <summary>
+        /// Deletes a category from the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdCategories_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             try
@@ -98,7 +119,11 @@ namespace BumboGames.admin
 
             LoadCategoryGridView();
         }
-
+        /// <summary>
+        /// Update Category with current inputted data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdCategories_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             TextBox txtCategoryName = (TextBox)this.grdCategories.Rows[e.RowIndex].FindControl("txtCategoryName");
@@ -140,7 +165,11 @@ namespace BumboGames.admin
             grdCategories.EditIndex = -1;
             LoadCategoryGridView();
         }
-
+        /// <summary>
+        /// disable grid edit mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdCategories_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             grdCategories.EditIndex = -1;
@@ -148,13 +177,21 @@ namespace BumboGames.admin
         }
 
         
-
+        /// <summary>
+        /// enable grid edit mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdCategories_RowEditing(object sender, GridViewEditEventArgs e)
         {
             grdCategories.EditIndex = e.NewEditIndex;
             LoadCategoryGridView();
         }
-
+        /// <summary>
+        /// change current page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdCategories_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grdCategories.PageIndex = e.NewPageIndex;

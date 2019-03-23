@@ -9,7 +9,10 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/** Author: Greg VanKampen and Vaughn Rowse
+ * Date:3-22-2019
+ * File: CreateAccount.cs
+ **/
 namespace BumboGames
 {
     public partial class CreateAccount : System.Web.UI.Page
@@ -31,7 +34,11 @@ namespace BumboGames
                 }
             }
         }
-
+        /// <summary>
+        /// Validates and creates an account
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
             if (IsValid)
@@ -81,7 +88,23 @@ namespace BumboGames
                 }
             }
         }
-
+        /// <summary>
+        /// inserts an account into the database
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="middleName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="userName"></param>
+        /// <param name="emailAddress"></param>
+        /// <param name="password"></param>
+        /// <param name="birthday"></param>
+        /// <param name="street"></param>
+        /// <param name="city"></param>
+        /// <param name="province"></param>
+        /// <param name="postalCode"></param>
+        /// <param name="phone"></param>
+        /// <param name="guid"></param>
+        /// <returns></returns>
         private int insertAccount(
         string firstName,
         string middleName,
@@ -212,7 +235,9 @@ namespace BumboGames
             return id;
 
         }
-        //loads values into textboxes of existing account
+        /// <summary>
+        /// loads an account for updating
+        /// </summary>
         private void bindAccountDetails()
         {
             try
@@ -249,8 +274,9 @@ namespace BumboGames
 
 
         }
-        //TODO::Create second form
-        //converts form to update display
+        /// <summary>
+        /// Loasd the fields for account updating
+        /// </summary>
         private void intializeUpdateFields()
         {
             txtUsername.Enabled = false;
@@ -265,13 +291,27 @@ namespace BumboGames
             btnCreateAccount.Visible = false;
             btnUpdateAccount.Visible = true;
         }
-
+        /// <summary>
+        /// update account with new inputted values
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnUpdateAccount_Click(object sender, EventArgs e)
         {
             //add an if admin
             updateAccount(null, txtLastName.Text, txtEmail.Text, txtStreet.Text, txtCity.Text, txtProvince.Text, txtPostalCode.Text, txtPhone1.Text);
         }
-
+        /// <summary>
+        /// inserts updated account into database
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="emailAddress"></param>
+        /// <param name="street"></param>
+        /// <param name="city"></param>
+        /// <param name="province"></param>
+        /// <param name="postalCode"></param>
+        /// <param name="phone"></param>
         private void updateAccount(
             string firstName,
             string lastName,
@@ -354,7 +394,11 @@ namespace BumboGames
 
             DBHelper.NonQuery("UpdateCustomer", prms.ToArray());
         }
-
+        /// <summary>
+        /// sends an account verification email to new users
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <param name="userName"></param>
         private void SendVerifycationEmail(string guid, string userName)
         {
             MailMessage mail = new MailMessage();
@@ -383,7 +427,12 @@ namespace BumboGames
             smtp.PickupDirectoryLocation = emailLogDir;
             smtp.Send(mail);
         }
-
+        /// <summary>
+        /// builds string contents of account email
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <param name="fullName"></param>
+        /// <returns></returns>
         private string generateVerificationEmail(string guid, string fullName)
         {
             StringBuilder sb = new StringBuilder();

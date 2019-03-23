@@ -6,7 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/** Author: Greg VanKampen and Vaughn Rowse
+ * Date:3-22-2019
+ * File: ProductMaintenance.cs
+ **/
 namespace BumboGames
 {
     public partial class ProductMaintenance : App_Code.AdminPage
@@ -48,7 +51,10 @@ namespace BumboGames
 
             }
         }
-
+        /// <summary>
+        /// Updates grid view with new search results
+        /// </summary>
+        /// <param name="searchKeyword"></param>
         private void LoadProductsGridViewByKeyword(string searchKeyword)
         {
             List<SqlParameter> prms = new List<SqlParameter>()
@@ -74,7 +80,11 @@ namespace BumboGames
             }
 
         }
-
+        /// <summary>
+        /// Genrtaes a category id parameter
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <returns></returns>
         private SqlParameter CategoryParamHelper(int categoryId)
         {
             return new SqlParameter()
@@ -85,7 +95,10 @@ namespace BumboGames
             };
         }
 
-
+        /// <summary>
+        /// Reloads grid view based on category selected
+        /// </summary>
+        /// <param name="category"></param>
         private void LoadProductsGridViewByCategory(int category)
         {
             List<SqlParameter> prms = new List<SqlParameter>();
@@ -102,6 +115,10 @@ namespace BumboGames
                 lblError.Text = "No products found for this category";
             }
         }
+
+        /// <summary>
+        /// Reloads grid view
+        /// </summary>
         private void LoadProductsGridView()
         {
             DBHelper.DataBindingWithPaging(this.grdProducts, "SelectProductMaintenance");
@@ -110,6 +127,11 @@ namespace BumboGames
             BindCategoryDropdownList(ddlCategoriesInFooter);
 
         }
+        /// <summary>
+        /// Creates a new product
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdProducts_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "btnNew")
@@ -122,7 +144,11 @@ namespace BumboGames
         }
 
 
-        //TODO: Deleting product does not validate order/cart status
+        /// <summary>
+        /// Deletes a product beloging to a row
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdProducts_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int productId = Convert.ToInt32(this.grdProducts.DataKeys[e.RowIndex].Values[0]);
@@ -132,7 +158,11 @@ namespace BumboGames
 
             LoadProductsGridView();
         }
-
+        /// <summary>
+        /// Updates a produuct with new inputed values
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdProducts_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             List<SqlParameter> prms = new List<SqlParameter>();
@@ -190,7 +220,11 @@ namespace BumboGames
             grdProducts.EditIndex = -1;
             LoadProductsGridView();
         }
-
+        /// <summary>
+        /// Puts a product row in edit mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdProducts_RowEditing(object sender, GridViewEditEventArgs e)
         {
             grdProducts.EditIndex = e.NewEditIndex;
@@ -209,7 +243,10 @@ namespace BumboGames
                 ddlCategory.SelectedValue = categoryId.ToString();
             }
         }
-
+        /// <summary>
+        /// binds a category drop down list to all categories
+        /// </summary>
+        /// <param name="ddlCategory"></param>
         private void BindCategoryDropdownList(DropDownList ddlCategory)
         {
             ddlCategory.DataValueField = "id";
@@ -217,19 +254,29 @@ namespace BumboGames
             DBHelper.DataBinding(ddlCategory, "SelectCategories");
             ddlCategory.Items.Insert(0, new ListItem("--Select Category--"));
         }
-
+        /// <summary>
+        /// Cancel a row in edit mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdProducts_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             grdProducts.EditIndex = -1;
             LoadProductsGridView();
         }
-
+        /// <summary>
+        /// update grids current index
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdProducts_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grdProducts.PageIndex = e.NewPageIndex;
             LoadProductsGridView();
         }
-
+        /// <summary>
+        /// collects data and inputs them into the database as a new product
+        /// </summary>
         private void AddNewProduct()
         {
             List<SqlParameter> prms = new List<SqlParameter>();
@@ -285,7 +332,11 @@ namespace BumboGames
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Searches the grid for products based on keyword
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             Response.Redirect($"~/admin/ProductMaintenance.aspx?word1=" + txtMaintenanceSearch.Text);

@@ -6,7 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/** Author: Greg VanKampen and Vaughn Rowse
+ * Date:3-22-2019
+ * File: Login.cs
+ **/
 namespace BumboGames
 {
     public partial class Login : System.Web.UI.Page
@@ -15,7 +18,11 @@ namespace BumboGames
         {
 
         }
-        //TODO: Update Redirect
+        /// <summary>
+        /// validates and sets the user to logged in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void lgnUser_Authenticate(object sender, AuthenticateEventArgs e)
         {
             e.Authenticated = false;
@@ -32,7 +39,12 @@ namespace BumboGames
                     Response.Redirect("~/Default.aspx");
             }
         }
-
+        /// <summary>
+        /// Validates that the users user/pass exists and matches
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         private bool AuthenticateUser(string userName, string password)
         {
             bool result = false;

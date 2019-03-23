@@ -4,5 +4,8 @@
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="phrContent" runat="server">
+    <!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:Products.aspx-->
+<!--Date3/22-2019-->
     <uc1:ucProducts runat="server" ID="ucProducts" />
 </asp:Content>

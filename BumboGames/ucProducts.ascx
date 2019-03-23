@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucProducts.ascx.cs" Inherits="BumboGames.ucProducts" %>
-
+<!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:ucProducts.ascx-->
+<!--Date3/22-2019-->
 
 <asp:Label ID="lblHeading" EnableViewState="false" runat="server" Text="" style="font-weight:bold;font-size:50px;" ></asp:Label>
 <br /><br />

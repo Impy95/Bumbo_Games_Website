@@ -6,7 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/** Author: Greg VanKampen and Vaughn Rowse
+ * Date:3-22-2019
+ * File: Cart.cs
+ **/
 namespace BumboGames
 {
     public partial class Cart : System.Web.UI.Page
@@ -19,6 +22,9 @@ namespace BumboGames
                 GetCartTotal();
             }
         }
+        /// <summary>
+        /// retrieves an existing cart from the database
+        /// </summary>
         private void GetCart()
         {
             Common.GetCart(this.grdCart, Request, Response);
@@ -34,6 +40,9 @@ namespace BumboGames
             }
 
         }
+        /// <summary>
+        /// retrieves the cart total from the database
+        /// </summary>
         private void GetCartTotal()
         {
 
@@ -45,7 +54,11 @@ namespace BumboGames
             this.lblCartTotal.Text = total.ToString("c2");
             this.lblCartTax.Text = tax.ToString("c2");
         }
-
+        /// <summary>
+        /// updates the cart with new quantities
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnUpdateCart_Click(object sender, EventArgs e)
         {
             string CartUId = Common.GetCartId(Request, Response);
@@ -96,13 +109,22 @@ namespace BumboGames
             if (lblCartItemsCount != null)
                 lblCartItemsCount.Text = count == 1 ? $"{count} item in cart" : count > 1 ? $"{count} items in cart" : "";
         }
-
+        /// <summary>
+        /// returns to home
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnContinueShopping_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Default.aspx");
         }
 
-        //todo: implement "UpdateCart" SProc
+        /// <summary>
+        /// Updates the cart with new quantities
+        /// </summary>
+        /// <param name="CartUId"></param>
+        /// <param name="productId"></param>
+        /// <param name="qty"></param>
         private void UpdateCartItem(string CartUId, int productId, int qty)
         {
             List<SqlParameter> prms = new List<SqlParameter>();
@@ -128,7 +150,11 @@ namespace BumboGames
 
             DBHelper.NonQuery("UpdateCart", prms.ToArray());
         }
-
+        /// <summary>
+        /// redirects to checkout
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnCheckout_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Checkout.aspx");

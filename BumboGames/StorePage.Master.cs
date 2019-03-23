@@ -4,7 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/** Author: Greg VanKampen and Vaughn Rowse
+ * Date:3-22-2019
+ * File: StorePage.cs
+ **/
 namespace BumboGames
 {
     public partial class StorePage : System.Web.UI.MasterPage
@@ -13,12 +16,11 @@ namespace BumboGames
         {
             GetCartCount();
         }
-
         private void GetCartCount()
         {
             string cartId = Common.GetCartId(Request, Response);
             int count = Common.GetCartCount(cartId);
-            //this.lblCartItemsCount.Text = count == 1 ? $"{count} item in cart" : count > 1 ? $"{count} items in cart" : "";
+            
         }
     }
 }

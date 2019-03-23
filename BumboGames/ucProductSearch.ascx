@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucProductSearch.ascx.cs" Inherits="BumboGames.ucProductSearch" %>
-
+<!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:ucProductSearch.ascx-->
+<!--Date3/22-2019-->
 <li class="px-4">
     <asp:TextBox ID="txtSearch" runat="server" placeholder="Search" CssClass="form-control"></asp:TextBox>
 </li>

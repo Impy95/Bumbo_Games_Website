@@ -3,6 +3,9 @@
 <%@ Register Src="~/admin/ucAdminNav.ascx" TagPrefix="uc1" TagName="ucAdminNav" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="navigation" runat="server">
+<!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:AccountMangagement.aspx-->
+<!--Date3/22-2019-->
     <uc1:ucAdminNav runat="server" ID="ucAdminNav" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">

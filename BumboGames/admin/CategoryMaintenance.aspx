@@ -5,6 +5,9 @@
     <uc1:ucAdminNav runat="server" id="ucAdminNav" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
+    <!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:CategoryMaintenance.aspx-->
+<!--Date3/22-2019-->
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="phrContent" runat="server">
     <br />

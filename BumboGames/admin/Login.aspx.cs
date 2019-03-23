@@ -6,7 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/** Author: Greg VanKampen and Vaughn Rowse
+ * Date:3-22-2019
+ * File: Login.cs
+ **/
 namespace BumboGames.admin
 {
     public partial class Login : System.Web.UI.Page
@@ -15,6 +18,11 @@ namespace BumboGames.admin
         {
 
         }
+        /// <summary>
+        /// Autenticate users and sets them to be logged in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
             e.Authenticated = false;
@@ -31,7 +39,12 @@ namespace BumboGames.admin
                     Response.Redirect("~/admin/AdminDashboard.aspx");
             }
         }
-
+        /// <summary>
+        /// Authenticates admin with special access
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         private bool AuthenticateAdmin(string userName, string password)
         {
             bool result = false;

@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="CreateAccount.aspx.cs" Inherits="BumboGames.CreateAccount" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
+    <!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:CreateAccount.aspx-->
+<!--Date3/22-2019-->
 </asp:Content>
 <asp:Content ID="AccountForm" ContentPlaceHolderID="phrContent" runat="server">
     <br />
@@ -170,7 +173,7 @@
             </asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="regBirthday" runat="server"
                 ErrorMessage="Birthday is not in valid format" ForeColor="Red"
-                ToolTip="Birthday is not in valid format"
+                ToolTip="Birthday is not in valid format (DD-MM-YYYY)"
                 ControlToValidate="txtBirthday"
                 ValidationExpression="((0?[13578]|10|12)(-|\/)((0[0-9])|([12])([0-9]?)|(3[01]?))(-|\/)((\d{4})|(\d{2}))|(0?[2469]|11)(-|\/)((0[0-9])|([12])([0-9]?)|(3[0]?))(-|\/)((\d{4}|\d{2})))"
                 ValidationGroup="validateAccount"

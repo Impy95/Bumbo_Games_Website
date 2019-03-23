@@ -6,7 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/** Author: Greg VanKampen and Vaughn Rowse
+ * Date:3-22-2019
+ * File: ImageValidation.cs
+ **/
 namespace BumboGames.admin
 {
     public partial class ImageValidation : System.Web.UI.Page
@@ -16,22 +19,36 @@ namespace BumboGames.admin
             LoadImagesGridView();
 
         }
+        /// <summary>
+        /// Update grid view
+        /// </summary>
         private void LoadImagesGridView()
         {
             DBHelper.DataBindingWithPaging(this.grdImages, "SelectImageMaintenance");
 
         }
-
+        /// <summary>
+        /// Change grid page index to current index
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void grdImages_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grdImages.PageIndex = e.NewPageIndex;
         }
-
-        protected void grdImages_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        /// <summary>
+        /// delete a product associated with an image
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void deleteProduct(object sender, EventArgs e)
         {
+            Button btn = (Button)sender;
+            //Fetch the row the button exists in
+            GridViewRow row = (GridViewRow)btn.NamingContainer;
             try
             {
-                Label id = (Label)grdImages.Rows[e.RowIndex].FindControl("lblProductId");
+                Label id = (Label)row.FindControl("lblProductId");
                 List<SqlParameter> prms = new List<SqlParameter>
             {
                 new SqlParameter
@@ -42,9 +59,6 @@ namespace BumboGames.admin
                 }
             };
                 DBHelper.NonQuery("DeleteProduct", prms.ToArray());
-                Image image = (Image)grdImages.Rows[e.RowIndex].FindControl("imgProduct");
-                //string file = image.ImageUrl;
-                //File.Delete(file);
             }
             catch(Exception ex)
             {
@@ -53,6 +67,11 @@ namespace BumboGames.admin
             LoadImagesGridView();
 
         }
+        /// <summary>
+        /// Approve an image for on site use
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void validateImage(object sender, EventArgs e)
         {
             Button btn = (Button)sender;

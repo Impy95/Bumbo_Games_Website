@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="Checkout.aspx.cs" Inherits="BumboGames.Checkout" %>
 <asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
+    <!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:Checkout.aspx-->
+<!--Date3/22-2019-->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
      <div id="notLoggedIn" runat="server" visible="false">
@@ -135,7 +138,7 @@
             </asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="regExpiry" runat="server"
                 ErrorMessage="Expiry Date is not in valid format" ForeColor="Red"
-                ToolTip="Expiry Date is not in valid format"
+                ToolTip="Expiry Date is not in valid format(MMYY)"
                 ControlToValidate="txtExpiryDate"
                 ValidationExpression="^(0[1-9]|1[0-2])[0-9][0-9]$"
                 ValidationGroup="validateCC"
@@ -177,7 +180,6 @@
     </div>
     <br />
     <h5 class="candy-border" style="text-align:center;" runat="server" id="order">Order Details</h5>
-    <!--Order Total-->
     <asp:GridView ID="grdCart" runat="server" 
         AutoGenerateColumns="False">
         <Columns>            

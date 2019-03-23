@@ -6,6 +6,9 @@
 <%@ Register Src="~/ucCategoryList.ascx" TagPrefix="uc1" TagName="ucCategoryList" %>
 
 <!DOCTYPE html>
+<!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:StorePage.Master-->
+<!--Date3/22-2019-->
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

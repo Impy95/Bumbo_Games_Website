@@ -1,4 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" EnableEventValidation ="false" CodeBehind="ImageValidation.aspx.cs" Inherits="BumboGames.admin.ImageValidation" %>
+
+<%@ Register Src="~/admin/ucAdminNav.ascx" TagPrefix="uc1" TagName="ucAdminNav" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="navigation" runat="server">
+    <!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:ImageValidation.aspx-->
+<!--Date3/22-2019-->
+    <uc1:ucAdminNav runat="server" ID="ucAdminNav" />
+</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="phrContent" runat="server">
@@ -7,7 +17,6 @@
         <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="Green"></asp:Label>
         <asp:GridView ID="grdImages" runat="server" AutoGenerateColumns="False"
             DataKeyNames="id"
-            OnRowDeleting="grdImages_RowDeleting"
             AllowPaging="True"
             OnPageIndexChanging="grdImages_PageIndexChanging"
             PageSize="5"
@@ -35,7 +44,7 @@
                 <asp:TemplateField ShowHeader="False">
                     <ItemTemplate>
                         <asp:Button ID="btnValidate" runat="server" onClick="validateImage" Text="Validate Image" />&nbsp;<asp:Button ID="btnDelete" runat="server" CausesValidation="False"
-                                CommandName="Delete" Text="Delete Associated Product" />
+                                onClick="deleteProduct" Text="Delete Associated Product" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

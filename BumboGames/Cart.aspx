@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StorePage.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="BumboGames.Cart" %>
 <asp:Content ID="Content3" ContentPlaceHolderID="categorySideBar" runat="server">
+    <!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:Cart.aspx-->
+<!--Date3/22-2019-->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phrContent" runat="server">
  <h5 style="text-align:center" class="candy-border">Shopping Cart</h5>

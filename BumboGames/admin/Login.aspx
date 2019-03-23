@@ -2,9 +2,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="categorySideBar" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="phrContent" runat="server">
-<%--    <asp:Label ID="lblHeading" EnableViewState="false" runat="server" Text="" CssClass="content-heading large">Administration Login</asp:Label>--%>
+    <!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:Login.aspx-->
+<!--Date3/22-2019-->
      <div>
-         <!-- BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" -->
+         
         <asp:Login ID="Login1" runat="server" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" 
             OnAuthenticate="Login1_Authenticate">
             <InstructionTextStyle Font-Italic="True" ForeColor="Black" />

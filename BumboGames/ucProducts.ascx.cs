@@ -7,12 +7,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-//TODO::FIX CSS(Bootstrap)
+/** Author: Greg VanKampen and Vaughn Rowse
+ * Date:3-22-2019
+ * File: ucProducts.cs
+ **/
 namespace BumboGames
 {
     public partial class ucProducts : System.Web.UI.UserControl
     {
         public bool Featured { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -76,6 +80,9 @@ namespace BumboGames
                 ProductCountMessage();
             }
         }
+        /// <summary>
+        /// Changes grid to match keywords in search
+        /// </summary>
         private void ProductSearch()
         {
             List<string> searchKeys = Request.QueryString.AllKeys.Where(q => q.Contains("word")).ToList();
@@ -101,12 +108,18 @@ namespace BumboGames
 
             DBHelper.DataBinding(this.rptProducts, "SearchProducts", prms.ToArray());
         }
-
+        /// <summary>
+        /// Displays message based on the amount of products found in a search
+        /// </summary>
         private void ProductCountMessage()
         {
             this.lblError.Text = this.rptProducts.Items.Count == 0 ? "No products found" : "";
         }
-
+        /// <summary>
+        /// creates a category ID parameter object
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <returns></returns>
         private SqlParameter CategoryParamHelper(int categoryId)
         {
             return new SqlParameter()
@@ -116,7 +129,11 @@ namespace BumboGames
                 Value = categoryId
             };
         }
-
+        /// <summary>
+        /// creates a product id parameter object
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns></returns>
         private SqlParameter ProductParamHelper(int productId)
         {
             return new SqlParameter()
@@ -126,6 +143,10 @@ namespace BumboGames
                 Value = productId
             };
         }
+        /// <summary>
+        /// loads gridview based on currently selected category
+        /// </summary>
+        /// <param name="categoryId"></param>
         private void LoadProductsByCategory(int categoryId)
         {
             List<SqlParameter> prms = new List<SqlParameter>();
@@ -137,6 +158,10 @@ namespace BumboGames
             LoadProducts(prms);
         }
 
+        /// <summary>
+        /// Loads details of a single product
+        /// </summary>
+        /// <param name="id"></param>
         private void LoadProductDetails(int id)
         {
             List<SqlParameter> prms = new List<SqlParameter>();
@@ -147,7 +172,9 @@ namespace BumboGames
 
             LoadProducts(prms);
         }
-
+        /// <summary>
+        /// loads features products exclusively
+        /// </summary>
         private void LoadFeaturedProducts()
         {
             List<SqlParameter> prms = new List<SqlParameter>();
@@ -161,7 +188,10 @@ namespace BumboGames
             LoadProducts(prms);
         }
 
-        //TODO:: Discover if price ranges are in Products main page load requirements
+        /// <summary>
+        /// load products into grid view
+        /// </summary>
+        /// <param name="prms"></param>
         private void LoadProducts(List<SqlParameter> prms = null)
         {
             if (prms == null)
@@ -179,10 +209,10 @@ namespace BumboGames
 
         }
 
-        //TODO:Implement Cart
+        
 
         /// <summary>
-        /// 
+        /// adds a product to cart
         /// </summary>
         /// <param name="source"></param>
         /// <param name="e"></param>
@@ -217,8 +247,10 @@ namespace BumboGames
         }
 
 
-        //TODO::Impliment cart functionality
-        //TODO::Learn Common
+        /// <summary>
+        /// Adds a product to cart
+        /// </summary>
+        /// <param name="productId"></param>
         private void AddToCart(int productId)
         {
             //Get the Cart Guid from the Cookie or Make a new one

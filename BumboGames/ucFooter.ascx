@@ -1,4 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucFooter.ascx.cs" Inherits="BumboGames.ucFooter" %>
+<!--Author: Greg VanKampen & Vaughn Rowse-->
+<!--File:ucFooter.ascx-->
+<!--Date3/22-2019-->
 <div>
     <div class="row">
         <div class="col-md-2 center">
